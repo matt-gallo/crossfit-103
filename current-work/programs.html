@@ -1,0 +1,786 @@
+<style>
+.cf103-programs-section {
+    --cf103-background: #041020;
+    --cf103-panel: #071424;
+    --cf103-panel-alt: #0b1c2e;
+    --cf103-border: rgba(233, 236, 238, 0.08);
+    --cf103-text: #e9ecee;
+    --cf103-muted: rgba(233, 236, 238, 0.68);
+    --cf103-accent: #218bf6;
+    --cf103-accent-dark: #176bc4;
+    font-family: 'Montserrat', 'Poppins', 'Segoe UI', sans-serif;
+    color: var(--cf103-text);
+    background: var(--cf103-background);
+    padding: 88px 0 104px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cf103-programs-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% -12%, rgba(33, 139, 246, 0.18), transparent 60%),
+        radial-gradient(circle at 78% 8%, rgba(0, 0, 0, 0.25), transparent 65%),
+        linear-gradient(180deg, rgba(4, 16, 32, 0.35), rgba(0, 0, 0, 0.85));
+    pointer-events: none;
+}
+
+.cf103-programs-section * {
+    box-sizing: border-box;
+}
+
+.cf103-programs-section a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cf103-programs__container {
+    width: min(1180px, 92vw);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cf103-programs__intro {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 72px;
+}
+
+.cf103-programs__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(233, 236, 238, 0.5);
+}
+
+.cf103-programs__eyebrow::before,
+.cf103-programs__eyebrow::after {
+    content: '';
+    width: 52px;
+    height: 1px;
+    background: rgba(233, 236, 238, 0.28);
+}
+
+.cf103-programs__title {
+    margin: 28px 0 20px;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.cf103-programs__lead {
+    margin: 0 auto 32px;
+    color: var(--cf103-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.cf103-programs__cta-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cf103-programs__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+    border: 1px solid transparent;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.cf103-programs__btn--primary {
+    background: var(--cf103-accent);
+    box-shadow: 0 16px 32px rgba(33, 139, 246, 0.28);
+}
+
+.cf103-programs__btn--primary:hover {
+    background: var(--cf103-accent-dark);
+    transform: translateY(-2px);
+}
+
+.cf103-programs__btn--outline {
+    border-color: rgba(233, 236, 238, 0.28);
+    background: transparent;
+}
+
+.cf103-programs__btn--outline:hover {
+    border-color: rgba(233, 236, 238, 0.55);
+    transform: translateY(-2px);
+}
+
+.cf103-programs__tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 24px;
+    margin-bottom: 88px;
+}
+
+.cf103-programs__tile {
+    background: var(--cf103-panel);
+    border: 1px solid var(--cf103-border);
+    border-radius: 18px;
+    padding: 32px 28px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cf103-programs__tile:hover {
+    transform: translateY(-6px);
+    border-color: rgba(33, 139, 246, 0.6);
+}
+
+.cf103-programs__tile h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.cf103-programs__tile p {
+    margin: 0;
+    color: var(--cf103-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.cf103-programs__tile span {
+    font-weight: 600;
+    color: var(--cf103-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cf103-programs__modules {
+    display: grid;
+    gap: 60px;
+}
+
+.cf103-programs__spotlight {
+    margin: 80px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 48px;
+    align-items: stretch;
+    background: linear-gradient(120deg, rgba(7, 20, 36, 0.95), rgba(4, 16, 32, 0.82));
+    border: 1px solid var(--cf103-border);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.cf103-programs__spotlight-copy {
+    padding: 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.cf103-programs__spotlight-copy h5 {
+    margin: 0;
+    font-size: clamp(2rem, 3.8vw, 2.6rem);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.cf103-programs__spotlight-copy p {
+    margin: 0;
+    color: var(--cf103-muted);
+    line-height: 1.6;
+}
+
+.cf103-programs__spotlight-points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.cf103-programs__spotlight-points li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.98rem;
+    color: var(--cf103-text);
+}
+
+.cf103-programs__spotlight-points li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cf103-accent);
+    margin-top: 6px;
+}
+
+.cf103-programs__spotlight-media {
+    position: relative;
+    min-height: 360px;
+    background-size: cover;
+    background-position: center;
+}
+
+.cf103-programs__spotlight-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(4, 16, 32, 0.1), rgba(4, 16, 32, 0.7));
+}
+
+.cf103-programs__spotlight-badge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    background: rgba(33, 139, 246, 0.85);
+    color: var(--cf103-text);
+    z-index: 1;
+}
+
+.cf103-programs__module {
+    display: grid;
+    grid-template-columns: minmax(0, 470px) minmax(0, 1fr);
+    gap: 48px;
+    align-items: stretch;
+    background: linear-gradient(120deg, rgba(7, 20, 36, 0.96), rgba(4, 16, 32, 0.82));
+    border: 1px solid var(--cf103-border);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.cf103-programs__module:nth-child(even) {
+    background: linear-gradient(120deg, rgba(11, 28, 46, 0.96), rgba(4, 16, 32, 0.82));
+}
+
+.cf103-programs__module-copy {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cf103-programs__module-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(233, 236, 238, 0.5);
+}
+
+.cf103-programs__module h4 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+}
+
+.cf103-programs__module p {
+    margin: 0;
+    color: var(--cf103-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cf103-programs__pricing {
+    list-style: none;
+    margin: 12px 0 8px;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.cf103-programs__pricing li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(233, 236, 238, 0.08);
+    font-size: 0.95rem;
+}
+
+.cf103-programs__module-media {
+    position: relative;
+    min-height: 320px;
+    background-size: cover;
+    background-position: center;
+}
+
+.cf103-programs__module-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(4, 16, 32, 0.15), rgba(4, 16, 32, 0.7));
+}
+
+.cf103-programs__badge {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    background: rgba(33, 139, 246, 0.82);
+    color: var(--cf103-text);
+    z-index: 1;
+}
+
+.cf103-programs__add-ons {
+    margin: 96px 0 72px;
+}
+
+.cf103-programs__add-ons header {
+    margin-bottom: 32px;
+}
+
+.cf103-programs__add-ons h5 {
+    margin: 12px 0 0;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    text-transform: uppercase;
+}
+
+.cf103-programs__add-ons p {
+    margin: 12px 0 0;
+    max-width: 680px;
+    color: var(--cf103-muted);
+    line-height: 1.6;
+}
+
+.cf103-programs__add-on-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.cf103-programs__add-on {
+    background: var(--cf103-panel);
+    border: 1px solid var(--cf103-border);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cf103-programs__add-on h6 {
+    margin: 0;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.cf103-programs__add-on p {
+    margin: 0;
+    color: var(--cf103-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.cf103-programs__testimonials {
+    margin-bottom: 88px;
+}
+
+.cf103-programs__testimonials header {
+    margin-bottom: 32px;
+    max-width: 640px;
+}
+
+.cf103-programs__testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.cf103-programs__testimonial {
+    background: var(--cf103-panel-alt);
+    border: 1px solid var(--cf103-border);
+    border-radius: 18px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cf103-programs__testimonial p {
+    margin: 0;
+    color: rgba(244, 247, 255, 0.9);
+    line-height: 1.6;
+}
+
+.cf103-programs__testimonial span {
+    font-size: 0.9rem;
+    color: rgba(233, 236, 238, 0.55);
+    letter-spacing: 0.02em;
+}
+
+.cf103-programs__cta-panel {
+    background: linear-gradient(135deg, rgba(7, 20, 36, 0.95), rgba(0, 0, 0, 0.82));
+    border: 1px solid var(--cf103-border);
+    border-radius: 24px;
+    padding: 56px 48px;
+    text-align: center;
+}
+
+.cf103-programs__cta-panel p {
+    margin: 20px auto 32px;
+    max-width: 560px;
+    color: var(--cf103-muted);
+    line-height: 1.6;
+}
+
+.cf103-program-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.cf103-program-modal.active {
+    display: flex;
+}
+
+.cf103-program-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 16, 32, 0.82);
+    backdrop-filter: blur(4px);
+}
+
+.cf103-program-modal__dialog {
+    position: relative;
+    width: min(640px, 92vw);
+    max-height: 92vh;
+    background: rgba(233, 236, 238, 0.5);
+    border-radius: 18px;
+    border: 1px solid rgba(233, 236, 238, 0.6);
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.cf103-program-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(7, 20, 36, 0.85);
+    color: #e9ecee;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cf103-program-modal__close:hover {
+    background: rgba(33, 139, 246, 0.85);
+}
+
+.cf103-program-modal__iframe {
+    width: 100%;
+    height: min(640px, 92vh);
+    border: none;
+}
+
+body.cf103-program-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .cf103-programs__module {
+        grid-template-columns: 1fr;
+    }
+
+    .cf103-programs__module-copy {
+        padding: 40px;
+    }
+
+    .cf103-programs__module-media {
+        min-height: 260px;
+    }
+
+    .cf103-programs__spotlight {
+        grid-template-columns: 1fr;
+    }
+
+    .cf103-programs__spotlight-copy {
+        padding: 44px;
+    }
+}
+
+@media (max-width: 640px) {
+    .cf103-programs-section {
+        padding: 72px 0 88px;
+    }
+
+    .cf103-programs__intro {
+        margin-bottom: 56px;
+    }
+
+    .cf103-programs__cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cf103-programs__module-copy {
+        padding: 32px 24px;
+    }
+
+    .cf103-programs__pricing li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .cf103-programs__spotlight-copy {
+        padding: 32px 24px;
+    }
+}
+</style>
+
+<section class="cf103-programs-section" id="programs">
+    <div class="cf103-programs__container">
+        <header class="cf103-programs__intro">
+            <span class="cf103-programs__eyebrow">Programs</span>
+            <h2 class="cf103-programs__title">Built for busy Staten Islanders who want results that stick</h2>
+            <p class="cf103-programs__lead">CrossFit 103 pairs proven programming with coaching that keeps you accountable. Pick the track that fits your schedule, stack on extra support, and we’ll help you stay consistent long after day one.</p>
+            <div class="cf103-programs__cta-group">
+                <a class="cf103-programs__btn cf103-programs__btn--primary cf103-programs__modal-trigger" href="#get-started">Get Started</a>
+            </div>
+        </header>
+
+        <div class="cf103-programs__tiles" id="programs-nav">
+            <a class="cf103-programs__tile" href="#group-classes">
+                <h3>CrossFit Group Training</h3>
+                <p>Daily coached sessions with strength, conditioning, and skill work that scale for first-timers and veterans alike.</p>
+                <span>Explore →</span>
+            </a>
+            <a class="cf103-programs__tile" href="#hyrox">
+                <h3>HYROX Prep</h3>
+                <p>Dedicated training blocks, strategy briefs, and a squad that’s ready for every sled push, wall ball, and run interval.</p>
+                <span>Explore →</span>
+            </a>
+            <a class="cf103-programs__tile" href="#stronger-with-sam">
+                <h3>Stronger with Sam</h3>
+                <p>Structured youth strength and conditioning blocks for Staten Island athletes ages 10–17.</p>
+                <span>Explore →</span>
+            </a>
+            <a class="cf103-programs__tile" href="#personal-training">
+                <h3>Personal Coaching</h3>
+                <p>One-on-one sessions with Coach Mike and team to rebuild, accelerate, or target specific goals.</p>
+                <span>Explore →</span>
+            </a>
+            <a class="cf103-programs__tile" href="#nutrition">
+                <h3>Nutrition Support</h3>
+                <p>Habit-based coaching, Fit3D scans, and accountability from Samantha Meister to match your training.</p>
+                <span>Explore →</span>
+            </a>
+        </div>
+
+        <div class="cf103-programs__modules">
+            <article class="cf103-programs__module" id="group-classes">
+                <div class="cf103-programs__module-copy">
+                    <span class="cf103-programs__module-eyebrow">CrossFit Group Training</span>
+                    <h4>Coached classes that keep you progressing.</h4>
+                    <p>Every hour covers warm-up, strength focus, conditioning, and mobility so you never guess what to do. LaunchPad onboarding makes sure you know the movements, and Wodify tracks the numbers so your wins add up.</p>
+                    <ul class="cf103-programs__pricing">
+                        <li><span>Unlimited Membership</span><span>$205 / month</span></li>
+                        <li><span>Active &amp; Fit Partnership</span><span>$130 / month · we manage reimbursement</span></li>
+                        <li><span>Drop-In Pass</span><span>$25 / visit · reserve through Wodify</span></li>
+                    </ul>
+                </div>
+                <div class="cf103-programs__module-media" style="background-image: url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68ca02197505d38e59abe99d.jpeg');">
+                </div>
+            </article>
+
+            <article class="cf103-programs__module" id="hyrox">
+                <div class="cf103-programs__module-copy">
+                    <span class="cf103-programs__module-eyebrow">HYROX Prep</span>
+                    <h4>Race-day ready strength and engine work.</h4>
+                    <p>We’re Staten Island’s HYROX affiliate. Thursday and Sunday sessions drill sled pushes and pulls, wall balls, ski ergs, and race pacing so you hit every station with confidence. Members train at no extra cost; visiting athletes can drop in or follow a six-week prep track.</p>
+                </div>
+                <div class="cf103-programs__module-media" style="background-image: url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68c9f78a555836195ff06b8e.png');">
+                </div>
+            </article>
+
+            <article class="cf103-programs__module" id="personal-training">
+                <div class="cf103-programs__module-copy">
+                    <span class="cf103-programs__module-eyebrow">Personal Coaching</span>
+                    <h4>Focused coaching built around your goals.</h4>
+                    <p>Work one-on-one with Coach Mike or the specialist who matches your needs. Sessions include movement assessment, custom programming, and take-home work—plus odd-object strength like sandbags and carries—so you return stronger for class or crush the milestones you’ve been chasing.</p>
+                </div>
+                <div class="cf103-programs__module-media" style="background-image: url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68ca031bb5ba427e77446e0c.jpeg');">
+                </div>
+            </article>
+
+            <article class="cf103-programs__module" id="nutrition">
+                <div class="cf103-programs__module-copy">
+                    <span class="cf103-programs__module-eyebrow">Nutrition Support</span>
+                    <h4>Fuel that matches the work you put in.</h4>
+                    <p>Samantha Meister builds sustainable nutrition plans that align with your training load and lifestyle. Fit3D scans, check-ins, and habit coaching keep you accountable whether you're in-season, rebuilding, or chasing a cut—and we sync the plan with class performance so you bring power to every wall ball, sled push, and lift.</p>
+                </div>
+                <div class="cf103-programs__module-media" style="background-image: url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68c9c14ea3764f5c7d09ccbf.jpeg');">
+                </div>
+            </article>
+        </div>
+
+        <section class="cf103-programs__spotlight" id="stronger-with-sam">
+            <div class="cf103-programs__spotlight-copy">
+                <span class="cf103-programs__module-eyebrow">Youth Strength &amp; Conditioning</span>
+                <h5>Stronger with Sam: Built for Staten Island athletes.</h5>
+                <p>Coach Sam leads our youth roster through progressive eight-week blocks that blend strength, speed, and resilience. Every cycle pairs in-gym sessions with take-home accountability so parents see measurable improvements in confidence and performance.</p>
+                <ul class="cf103-programs__spotlight-points">
+                    <li>Two tracks: Middle School (ages 10–13) and High School (ages 14–17).</li>
+                    <li>Weekly small-group sessions capped at 12 athletes for individual attention.</li>
+                    <li>Movement assessments, parent updates, and optional Fit3D scans every block.</li>
+                    <li>Flexible drop-in punch cards for in-season athletes who need supplemental work.</li>
+                </ul>
+                <div class="cf103-programs__cta-group">
+                    <a class="cf103-programs__btn cf103-programs__btn--primary cf103-programs__modal-trigger" href="#get-started">Get Started</a>
+                </div>
+            </div>
+            <div class="cf103-programs__spotlight-media" style="background-image: url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68c9c14e82702ca79c3c5a0e.png');">
+            </div>
+        </section>
+
+        <section class="cf103-programs__add-ons" id="add-ons">
+            <header>
+                <span class="cf103-programs__eyebrow">Add-On Support</span>
+                <h5>Dial in the details that accelerate progress</h5>
+                <p>Layer specialty services onto any membership to stay accountable, sharpen skills, and keep recovery on pace with your training volume.</p>
+            </header>
+            <div class="cf103-programs__add-on-grid">
+                <div class="cf103-programs__add-on">
+                    <h6>Fit3D Body Scans</h6>
+                    <p>Track composition, posture, and inches with clear visuals. Members receive preferred pricing; non-members can book a la carte.</p>
+                </div>
+                <div class="cf103-programs__add-on">
+                    <h6>Specialty Clinics</h6>
+                    <p>Target Olympic lifting, gymnastics, mobility, or engine work with deep-dive clinics led by our senior coaches.</p>
+                </div>
+                <div class="cf103-programs__add-on">
+                    <h6>Community Events</h6>
+                    <p>In-house throwdowns, HYROX qualifiers, and partner challenges keep you competing and connected year-round.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-programs__testimonials" id="testimonials">
+            <header>
+                <span class="cf103-programs__eyebrow">Member Wins</span>
+                <h5>Real Staten Islanders. Real progress.</h5>
+                <p>Pull live reviews from Google, Wodify, or your video vault to show prospects exactly what they can expect when they commit.</p>
+            </header>
+            <div class="cf103-programs__testimonial-grid">
+                <div class="cf103-programs__testimonial">
+                    <p>“CrossFit 103 has me lifting heavier, moving better, and staying consistent. The coaching is dialed in every single class.”</p>
+                    <span>Erin · Member since 2019</span>
+                </div>
+                <div class="cf103-programs__testimonial">
+                    <p>“HYROX training here is next level. Programming matches the race and the crew keeps you locked in through every station.”</p>
+                    <span>Andre · HYROX Athlete</span>
+                </div>
+                <div class="cf103-programs__testimonial">
+                    <p>“Fit3D scans and nutrition coaching gave me structure. I see the changes, and I know exactly what to adjust each month.”</p>
+                    <span>Melissa · Nutrition + Training</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="cf103-programs__cta-panel" id="programs-cta">
+            <span class="cf103-programs__eyebrow">Get Started</span>
+            <h5>Ready to train with a plan?</h5>
+            <p>Book your No-Sweat Intro or drop us a message with your schedule. We’ll match you to the right coach, program, and support so your next 90 days at CrossFit 103 are locked in.</p>
+            <div class="cf103-programs__cta-group">
+                <a class="cf103-programs__btn cf103-programs__btn--primary cf103-programs__modal-trigger" href="#get-started">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="cf103-program-modal" id="cf103-program-modal" aria-hidden="true">
+    <div class="cf103-program-modal__backdrop" data-close="true"></div>
+    <div class="cf103-program-modal__dialog" role="dialog" aria-modal="true" aria-label="General Interest Form">
+        <button type="button" class="cf103-program-modal__close" aria-label="Close">×</button>
+        <iframe
+            src="https://api.leadconnectorhq.com/widget/form/hErjkS6v47Q0IA55lB3p"
+            class="cf103-program-modal__iframe"
+            id="programs-popup-hErjkS6v47Q0IA55lB3p"
+            data-layout="{'id':'POPUP'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="General Interest Form"
+            data-height="457"
+            data-layout-iframe-id="programs-popup-hErjkS6v47Q0IA55lB3p"
+            data-form-id="hErjkS6v47Q0IA55lB3p"
+            title="General Interest Form"
+        ></iframe>
+    </div>
+</div>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+(function() {
+    const modal = document.getElementById('cf103-program-modal');
+    if (!modal) return;
+    const openers = document.querySelectorAll('.cf103-programs__modal-trigger');
+    const closeBtn = modal.querySelector('.cf103-program-modal__close');
+    const backdrop = modal.querySelector('.cf103-program-modal__backdrop');
+
+    const openModal = (event) => {
+        event.preventDefault();
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('cf103-program-modal-open');
+        closeBtn.focus();
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('cf103-program-modal-open');
+    };
+
+    openers.forEach((button) => button.addEventListener('click', openModal));
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+})();
+</script>

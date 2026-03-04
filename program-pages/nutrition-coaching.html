@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Coaching | CrossFit 103</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cf103-bg: #041020;
+            --cf103-panel: #071424;
+            --cf103-border: rgba(233, 236, 238, 0.1);
+            --cf103-text: #e9ecee;
+            --cf103-muted: rgba(233, 236, 238, 0.68);
+            --cf103-accent: #218bf6;
+            --cf103-accent-dark: #176bc4;
+            --cf103-white: #ffffff;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', 'Poppins', 'Segoe UI', sans-serif;
+            color: var(--cf103-text);
+            background: var(--cf103-bg);
+            line-height: 1.6;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .cf103-detail { position: relative; overflow: hidden; }
+
+        .cf103-detail__container {
+            width: min(1180px, 92vw);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cf103-detail__hero {
+            position: relative;
+            min-height: 70vh;
+            display: grid;
+            align-items: end;
+            padding: 120px 0 80px;
+            color: var(--cf103-white);
+            background: linear-gradient(185deg, rgba(4, 16, 32, 0.4), rgba(4, 16, 32, 0.92)),
+                        url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68c9c14ea3764f5c7d09ccbf.jpeg') center/cover;
+        }
+
+        .cf103-detail__hero-inner { max-width: 620px; }
+
+        .cf103-detail__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: rgba(233, 236, 238, 0.7);
+        }
+
+        .cf103-detail__eyebrow::before {
+            content: '';
+            width: 52px;
+            height: 1px;
+            background: rgba(233, 236, 238, 0.38);
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 5vw, 3.6rem);
+            margin: 28px 0 16px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+        }
+
+        .cf103-detail__lead {
+            margin: 0 0 32px;
+            color: rgba(233, 236, 238, 0.82);
+            font-size: 1.05rem;
+        }
+
+        .cf103-detail__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 34px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.88rem;
+            border: 1px solid transparent;
+            background: var(--cf103-accent);
+            box-shadow: 0 20px 40px rgba(33, 139, 246, 0.28);
+            transition: transform 0.22s ease;
+        }
+
+        .cf103-detail__btn:hover { background: var(--cf103-accent-dark); transform: translateY(-2px); }
+
+        .cf103-detail__section {
+            padding: 88px 0;
+            border-bottom: 1px solid var(--cf103-border);
+        }
+
+        .cf103-detail__section:last-of-type { border-bottom: none; }
+
+        .cf103-detail__section header {
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .cf103-detail__section h2 {
+            margin: 0 0 16px;
+            font-size: clamp(2rem, 3.6vw, 2.8rem);
+            text-transform: uppercase;
+        }
+
+        .cf103-detail__section p { margin: 0; color: var(--cf103-muted); }
+
+        .cf103-detail__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .cf103-detail__card {
+            background: var(--cf103-panel);
+            border: 1px solid var(--cf103-border);
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .cf103-detail__card h3 {
+            margin: 0 0 12px;
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .cf103-detail__card p { margin: 0; color: var(--cf103-muted); }
+
+        .cf103-detail__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .cf103-detail__list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .cf103-detail__list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 6px;
+            background: var(--cf103-accent);
+        }
+
+        .cf103-detail__cta-panel {
+            background: linear-gradient(135deg, rgba(7, 20, 36, 0.92), rgba(0, 0, 0, 0.85));
+            border: 1px solid var(--cf103-border);
+            border-radius: 24px;
+            padding: 56px 48px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cf103-detail__cta-panel p {
+            max-width: 560px;
+            margin: 16px auto 32px;
+            color: var(--cf103-muted);
+        }
+
+        .cf103-detail__reviews {
+            margin-top: 72px;
+            background: var(--cf103-panel);
+            border: 1px solid var(--cf103-border);
+            border-radius: 24px;
+            padding: 32px;
+        }
+
+        .cf103-detail__map {
+            margin: 72px 0 88px;
+            text-align: center;
+        }
+
+        .cf103-detail__map a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: 1px solid rgba(233, 236, 238, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        .cf103-detail-modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .cf103-detail-modal.active { display: flex; }
+
+        .cf103-detail-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 16, 32, 0.82);
+            backdrop-filter: blur(4px);
+        }
+
+        .cf103-detail-modal__dialog {
+            position: relative;
+            width: min(640px, 92vw);
+            max-height: 92vh;
+            background: rgba(233, 236, 238, 0.5);
+            border-radius: 18px;
+            border: 1px solid rgba(233, 236, 238, 0.6);
+            overflow: hidden;
+            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        .cf103-detail-modal__close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(7, 20, 36, 0.85);
+            color: var(--cf103-white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf103-detail-modal__close:hover { background: rgba(33, 139, 246, 0.85); }
+
+        .cf103-detail-modal__iframe {
+            width: 100%;
+            height: min(640px, 92vh);
+            border: none;
+        }
+
+        body.cf103-detail-modal-open { overflow: hidden; }
+
+        @media (max-width: 768px) {
+            .cf103-detail__hero { padding: 100px 0 60px; min-height: 60vh; }
+            .cf103-detail__cta-panel { padding: 44px 28px; }
+            .cf103-detail__reviews { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="cf103-detail">
+        <section class="cf103-detail__hero">
+            <div class="cf103-detail__container">
+                <div class="cf103-detail__hero-inner">
+                    <span class="cf103-detail__eyebrow">Nutrition Coaching</span>
+                    <h1>Fuel that matches the work you put in.</h1>
+                    <p class="cf103-detail__lead">Coach Sophia designs sustainable nutrition systems that align with your training load, life demands, and body composition goals—no crash dieting required.</p>
+                    <a class="cf103-detail__btn cf103-detail-trigger" href="#get-started">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>Who it’s built for</h2>
+                    <p>Nutrition coaching supports members and non-members who need structure, accountability, and expert guidance to eat for performance, body recomposition, or health.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Busy Professionals</h3>
+                        <p>Dial in meal planning and macro targets around commuting, family obligations, and unpredictable schedules.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Competitive Athletes</h3>
+                        <p>Fuel HYROX prep, CrossFit cycles, or sport seasons with periodized nutrition that adapts to training phases.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Body Recomposition</h3>
+                        <p>Lose body fat or build lean mass with habit-based coaching, Fit3D data, and weekly check-ins.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>How coaching works</h2>
+                    <p>We combine data, accountability, and practical strategies so you can execute consistently in real life.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Discovery & Assessment</h3>
+                        <ul class="cf103-detail__list">
+                            <li>Deep-dive into lifestyle, training volume, and goals.</li>
+                            <li>Initial Fit3D scan and optional lab review to build starting metrics.</li>
+                        </ul>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Personalized Game Plan</h3>
+                        <ul class="cf103-detail__list">
+                            <li>Macro or habit-based plan tailored to your preferences, cultural foods, and schedule.</li>
+                            <li>Shopping lists, meal templates, and dining-out strategies so nothing derails progress.</li>
+                        </ul>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Accountability & Adjustments</h3>
+                        <ul class="cf103-detail__list">
+                            <li>Weekly check-ins with Coach Sophia via app or in-person.</li>
+                            <li>Plan tweaks based on biofeedback, energy levels, and training performance.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>Benefits you’ll notice</h2>
+                    <p>Proper fuel shows up in the gym, on the scale, and in your daily energy.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Consistent Energy</h3>
+                        <p>Balanced macros and meal timing keep blood sugar stable so workouts and workdays feel productive.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Improved Composition</h3>
+                        <p>Track muscle gain, fat loss, and posture changes with quarterly Fit3D scans.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Mindset Shift</h3>
+                        <p>Develop sustainable habits instead of short-term diets so success sticks long term.</p>
+                    </article>
+                </div>
+                <div class="cf103-detail__cta-panel">
+                    <h3>Start with a nutrition consult</h3>
+                    <p>Secure a 7-Day Trial and bundle a nutrition kickoff to see how aligned training and fuel feel.</p>
+                    <a class="cf103-detail__btn cf103-detail-trigger" href="#get-started">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>What you’ll get between check-ins</h2>
+                    <p>Success happens between appointments. We keep support tight so you stay on track.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Habit Tracking</h3>
+                        <p>Daily habit prompts, water goals, and sleep scores inside the coaching app.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Recipe & Meal Library</h3>
+                        <p>Access to quick prep ideas, macro-friendly swaps, and family-sized meal templates.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>On-Demand Support</h3>
+                        <p>Message Coach Sophia for travel adjustments, restaurant guidance, or mindset coaching when life gets hectic.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="cf103-detail__container">
+            <section class="cf103-detail__reviews">
+                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-cc9c7540-cb14-46f1-a120-19c29085eae5" data-elfsight-app-lazy></div>
+            </section>
+
+            <section class="cf103-detail__map">
+                <h2>Meet Coach Sophia in person</h2>
+                <p>CrossFit 103 · 47 Trioka Way Staten Island, NY 10309</p>
+                <a href="https://maps.google.com/?q=CrossFit+103,47+Trioka+Way,Staten+Island+NY+10309" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </section>
+        </div>
+    </main>
+
+    <div class="cf103-detail-modal" id="cf103-detail-modal" aria-hidden="true">
+        <div class="cf103-detail-modal__backdrop" data-close="true"></div>
+        <div class="cf103-detail-modal__dialog" role="dialog" aria-modal="true" aria-label="General Interest Form">
+            <button type="button" class="cf103-detail-modal__close" aria-label="Close">×</button>
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/hErjkS6v47Q0IA55lB3p"
+                class="cf103-detail-modal__iframe"
+                id="detail-popup-hErjkS6v47Q0IA55lB3p"
+                data-layout="{'id':'POPUP'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="General Interest Form"
+                data-height="457"
+                data-layout-iframe-id="detail-popup-hErjkS6v47Q0IA55lB3p"
+                data-form-id="hErjkS6v47Q0IA55lB3p"
+                title="General Interest Form"
+            ></iframe>
+        </div>
+    </div>
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    <script>
+        (function() {
+            const modal = document.getElementById('cf103-detail-modal');
+            if (!modal) return;
+            const openers = document.querySelectorAll('.cf103-detail-trigger');
+            const closeBtn = modal.querySelector('.cf103-detail-modal__close');
+            const backdrop = modal.querySelector('.cf103-detail-modal__backdrop');
+
+            const openModal = (event) => {
+                event.preventDefault();
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('cf103-detail-modal-open');
+                closeBtn.focus();
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('cf103-detail-modal-open');
+            };
+
+            openers.forEach((button) => button.addEventListener('click', openModal));
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<section class="programs">
+    <div class="section-head">
+        <div>
+            <p class="label">Programming</p>
+            <h2>Every track is built to win—even if you&rsquo;re just getting started</h2>
+        </div>
+        <p>Our coaches design purposeful cycles with clear progressions so you always know how today&rsquo;s work ladders up to your goals.</p>
+    </div>
+    <div class="programs-grid">
+        <article class="card">
+            <span class="label">Foundation</span>
+            <h3>LaunchPad On-Ramp</h3>
+            <p>Three personal sessions to lock in technique, movement screening, and baseline strength testing before joining classes.</p>
+            <ul>
+                <li>Movement diagnostics + mobility plan</li>
+                <li>Intro strength &amp; conditioning blocks</li>
+                <li>Nutrition quick-start guide</li>
+            </ul>
+        </article>
+        <article class="card">
+            <span class="label">Group</span>
+            <h3>Daily CrossFit Classes</h3>
+            <p>High-energy 60-minute sessions blending strength, skill, and metabolic conditioning with tiered scaling options.</p>
+            <ul>
+                <li>Fresh programming six days a week</li>
+                <li>Coach-led warm-ups &amp; cool-downs</li>
+                <li>Performance tracking in the 103 App</li>
+            </ul>
+        </article>
+        <article class="card">
+            <span class="label">Advanced</span>
+            <h3>Competitor Lab</h3>
+            <p>Extra work tracks and open-gym access for athletes preparing for comps, throwdowns, or seasonal peaks.</p>
+            <ul>
+                <li>Weekly strategy sessions</li>
+                <li>Video review + feedback loops</li>
+                <li>Strength &amp; engine specialty days</li>
+            </ul>
+        </article>
+        <article class="card">
+            <span class="label">Support</span>
+            <h3>Hybrid Coaching</h3>
+            <p>Pair group classes with 1:1 check-ins, personalized accessory work, and habit coaching to accelerate results.</p>
+            <ul>
+                <li>Bi-weekly accountability calls</li>
+                <li>Custom accessory templates</li>
+                <li>Macro guidance + recovery stack</li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+<style>
+    .programs {
+        width: min(1150px, 100%);
+        margin: 0 auto;
+        display: grid;
+        gap: 44px;
+        color: #e2e8f0;
+    }
+
+    .section-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .section-head h2 {
+        margin: 0;
+        font-size: clamp(32px, 4.5vw, 46px);
+        line-height: 1.1;
+        color: #f8fafc;
+    }
+
+    .section-head > p {
+        max-width: 520px;
+        margin: 0;
+        font-size: 18px;
+        color: rgba(148, 163, 184, 0.9);
+    }
+
+    .section-head .label {
+        margin: 0 0 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #38bdf8;
+    }
+
+    .section-head .label::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: currentColor;
+        opacity: 0.6;
+    }
+
+    .programs-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+        padding: 32px;
+        border-radius: 22px;
+        background: linear-gradient(160deg, rgba(15, 23, 42, 0.85), rgba(45, 55, 72, 0.55));
+        border: 1px solid rgba(56, 189, 248, 0.08);
+        display: grid;
+        gap: 18px;
+        min-height: 280px;
+    }
+
+    .card .label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #38bdf8;
+    }
+
+    .card h3 {
+        margin: 0;
+        font-size: 22px;
+        color: #f8fafc;
+    }
+
+    .card p {
+        margin: 0;
+        line-height: 1.6;
+        color: rgba(203, 213, 225, 0.92);
+    }
+
+    .card ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+        font-size: 15px;
+        color: rgba(148, 163, 184, 0.92);
+    }
+
+    .card ul li::before {
+        content: "•";
+        color: #38bdf8;
+        margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+        .card {
+            padding: 26px;
+        }
+    }
+</style>

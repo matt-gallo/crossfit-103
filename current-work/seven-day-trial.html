@@ -1,0 +1,526 @@
+<style>
+.cf103-trial-section {
+    --cf103-bg: #041020;
+    --cf103-panel: #071424;
+    --cf103-border: rgba(233, 236, 238, 0.1);
+    --cf103-text: #e9ecee;
+    --cf103-accent: #218bf6;
+    --cf103-accent-dark: #176bc4;
+    --cf103-muted: rgba(233, 236, 238, 0.68);
+    font-family: 'Montserrat', 'Poppins', 'Segoe UI', sans-serif;
+    color: var(--cf103-text);
+    background: radial-gradient(circle at 15% -10%, rgba(33, 139, 246, 0.18), transparent 55%),
+                linear-gradient(180deg, rgba(4, 16, 32, 0.7), rgba(0, 0, 0, 0.92)),
+                var(--cf103-bg);
+    padding: 96px 0 108px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cf103-trial-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 0%, rgba(0, 0, 0, 0.25), transparent 60%);
+    pointer-events: none;
+}
+
+.cf103-trial-container {
+    width: min(1180px, 92vw);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cf103-trial-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 48px;
+    align-items: stretch;
+    margin-bottom: 88px;
+}
+
+.cf103-trial-copy {
+    background: rgba(7, 20, 36, 0.92);
+    border: 1px solid var(--cf103-border);
+    border-radius: 26px;
+    padding: 56px 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.cf103-trial-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(233, 236, 238, 0.52);
+}
+
+.cf103-trial-eyebrow::before {
+    content: '';
+    width: 48px;
+    height: 1px;
+    background: rgba(233, 236, 238, 0.28);
+}
+
+.cf103-trial-copy h1 {
+    margin: 0;
+    font-size: clamp(2.6rem, 4.8vw, 3.4rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.cf103-trial-copy p {
+    margin: 0;
+    color: var(--cf103-muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.cf103-trial-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.cf103-trial-checklist li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    font-size: 1rem;
+}
+
+.cf103-trial-checklist li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 6px;
+    background: var(--cf103-accent);
+}
+
+.cf103-trial-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cf103-trial-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.88rem;
+    border: 1px solid transparent;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.cf103-trial-btn.primary {
+    background: var(--cf103-accent);
+    box-shadow: 0 18px 32px rgba(33, 139, 246, 0.28);
+}
+
+.cf103-trial-btn.primary:hover {
+    background: var(--cf103-accent-dark);
+    transform: translateY(-2px);
+}
+
+.cf103-trial-media {
+    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
+    border: 1px solid var(--cf103-border);
+    background: url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68ca031bb5ba427e77446e0c.jpeg') center/cover;
+    min-height: 420px;
+}
+
+.cf103-trial-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(4, 16, 32, 0.15), rgba(4, 16, 32, 0.7));
+}
+
+.cf103-trial-badge {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    background: rgba(33, 139, 246, 0.85);
+    color: var(--cf103-text);
+    z-index: 1;
+}
+
+.cf103-trial-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 96px;
+}
+
+.cf103-trial-benefit {
+    background: rgba(7, 20, 36, 0.9);
+    border: 1px solid var(--cf103-border);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cf103-trial-benefit h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.cf103-trial-benefit p {
+    margin: 0;
+    color: var(--cf103-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.cf103-trial-proof {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 48px;
+    align-items: center;
+}
+
+.cf103-trial-proof-media {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--cf103-border);
+    background: url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68c9f78a555836195ff06b8e.png') center/cover;
+    min-height: 360px;
+}
+
+.cf103-trial-proof-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(4, 16, 32, 0.2), rgba(4, 16, 32, 0.7));
+}
+
+.cf103-trial-proof h2 {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 3.6vw, 2.8rem);
+    text-transform: uppercase;
+}
+
+.cf103-proof-list {
+    list-style: none;
+    margin: 0 0 28px;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.cf103-proof-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--cf103-text);
+    font-size: 1rem;
+}
+
+.cf103-proof-list li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-top: 5px;
+    background: var(--cf103-accent);
+}
+
+.cf103-trial-guarantee {
+    background: rgba(7, 20, 36, 0.92);
+    border: 1px solid var(--cf103-border);
+    border-radius: 24px;
+    padding: 48px;
+    text-align: center;
+    margin-top: 88px;
+}
+
+.cf103-trial-guarantee h3 {
+    margin: 0 0 16px;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+}
+
+.cf103-trial-guarantee p {
+    margin: 0 0 24px;
+    color: var(--cf103-muted);
+    line-height: 1.6;
+}
+
+.cf103-trial-guarantee small {
+    display: block;
+    color: rgba(233, 236, 238, 0.5);
+    margin-top: 16px;
+}
+
+.cf103-trial-reviews {
+    margin-top: 64px;
+    background: rgba(7, 20, 36, 0.9);
+    border: 1px solid var(--cf103-border);
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.cf103-trial-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.cf103-trial-modal.active {
+    display: flex;
+}
+
+.cf103-trial-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 16, 32, 0.82);
+    backdrop-filter: blur(4px);
+}
+
+.cf103-trial-modal__dialog {
+    position: relative;
+    width: min(640px, 92vw);
+    max-height: 92vh;
+    background: rgba(233, 236, 238, 0.5);
+    border-radius: 18px;
+    border: 1px solid rgba(233, 236, 238, 0.6);
+    overflow: hidden;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.cf103-trial-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(7, 20, 36, 0.85);
+    color: #e9ecee;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cf103-trial-modal__close:hover {
+    background: rgba(33, 139, 246, 0.85);
+}
+
+.cf103-trial-modal__iframe {
+    width: 100%;
+    height: min(640px, 92vh);
+    border: none;
+}
+
+body.cf103-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+    .cf103-trial-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .cf103-trial-copy {
+        padding: 44px;
+    }
+
+    .cf103-trial-media {
+        min-height: 360px;
+    }
+
+    .cf103-trial-proof {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .cf103-trial-section {
+        padding: 80px 0 92px;
+    }
+
+    .cf103-trial-copy {
+        padding: 32px 24px;
+    }
+
+    .cf103-trial-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cf103-trial-guarantee {
+        padding: 36px 24px;
+    }
+
+    .cf103-trial-reviews {
+        padding: 28px 20px;
+    }
+}
+</style>
+
+<section class="cf103-trial-section" id="trial">
+    <div class="cf103-trial-container">
+        <div class="cf103-trial-hero">
+            <div class="cf103-trial-copy">
+                <span class="cf103-trial-eyebrow">7-Day Trial</span>
+                <h1>Your first week at CrossFit 103 is all-in.</h1>
+                <p>Jump into seven days of coached classes, HYROX prep, and our Stronger with Sam youth track. We set you up with a LaunchPad session, reserve your classes, and run a Fit3D scan so you leave with a real plan—not a sales pitch.</p>
+                <ul class="cf103-trial-checklist">
+                    <li>Day 1: No-Sweat Intro + movement screen with Coach Mike.</li>
+                    <li>Day 2-6: Unlimited classes across CrossFit, HYROX, and Open Gym.</li>
+                    <li>Day 7: Fit3D scan review + next-step consultation.</li>
+                </ul>
+                <div class="cf103-trial-cta-group">
+                    <a class="cf103-trial-btn primary cf103-trial-open" href="#get-started">Get Started</a>
+                </div>
+            </div>
+            <div class="cf103-trial-media">
+                <span class="cf103-trial-badge">Seven Days</span>
+            </div>
+        </div>
+
+        <div class="cf103-trial-benefits">
+            <div class="cf103-trial-benefit">
+                <h3>Coaching Every Session</h3>
+                <p>We cap classes to keep instruction tight. Coaches cue movement, scale workouts, and track your progress inside Wodify.</p>
+            </div>
+            <div class="cf103-trial-benefit">
+                <h3>HYROX Access</h3>
+                <p>Drop into our affiliate HYROX sessions to test sleds, wall balls, ski ergs, and race-day pacing alongside other competitors.</p>
+            </div>
+            <div class="cf103-trial-benefit">
+                <h3>LaunchPad Onboarding</h3>
+                <p>New to CrossFit? LaunchPad covers fundamentals, safety, and confidence so you can jump into group training without guessing.</p>
+            </div>
+            <div class="cf103-trial-benefit">
+                <h3>Fit3D Scan Included</h3>
+                <p>Capture a full-body scan on day seven. We review posture, composition, and outline the plan that keeps your momentum rolling.</p>
+            </div>
+        </div>
+
+        <div class="cf103-trial-proof">
+            <div class="cf103-trial-proof-media"></div>
+            <div>
+                <h2>What to expect inside your trial.</h2>
+                <ul class="cf103-proof-list">
+                    <li>Unlimited access to CrossFit classes, HYROX prep, and Open Gym blocks.</li>
+                    <li>Optional Stronger with Sam drop-in for eligible youth athletes.</li>
+                    <li>Nutrition kickoff with Coach Sophia plus habit checklists.</li>
+                    <li>Goal review meeting and membership roadmap on day seven.</li>
+                </ul>
+                <div class="cf103-trial-cta-group">
+                    <a class="cf103-trial-btn primary cf103-trial-open" href="#get-started">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cf103-trial-guarantee" id="trial-form">
+            <h3>Start strong or walk away.</h3>
+            <p>If the 7-Day Trial doesn’t feel like the right fit, cancel before day seven and keep the Fit3D scan results with no commitment. When you’re ready, we’ll lock in your membership tier, Active &amp; Fit reimbursement, and next 90-day goals.</p>
+            <a class="cf103-trial-btn primary cf103-trial-open" href="#get-started">Get Started</a>
+            <small>Limited to 10 trial athletes per month to protect coaching quality.</small>
+        </div>
+
+        <div class="cf103-trial-reviews">
+            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-cc9c7540-cb14-46f1-a120-19c29085eae5" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+</section>
+
+<div class="cf103-trial-modal" id="cf103-trial-modal" aria-hidden="true">
+    <div class="cf103-trial-modal__backdrop" data-close="true"></div>
+    <div class="cf103-trial-modal__dialog" role="dialog" aria-modal="true" aria-label="General Interest Form">
+        <button type="button" class="cf103-trial-modal__close" aria-label="Close">×</button>
+        <iframe
+            src="https://api.leadconnectorhq.com/widget/form/hErjkS6v47Q0IA55lB3p"
+            class="cf103-trial-modal__iframe"
+            id="popup-hErjkS6v47Q0IA55lB3p"
+            data-layout="{'id':'POPUP'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="General Interest Form"
+            data-height="457"
+            data-layout-iframe-id="popup-hErjkS6v47Q0IA55lB3p"
+            data-form-id="hErjkS6v47Q0IA55lB3p"
+            title="General Interest Form"
+        ></iframe>
+    </div>
+</div>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+(function() {
+    const modal = document.getElementById('cf103-trial-modal');
+    if (!modal) return;
+    const openers = document.querySelectorAll('.cf103-trial-open');
+    const closeBtn = modal.querySelector('.cf103-trial-modal__close');
+    const backdrop = modal.querySelector('.cf103-trial-modal__backdrop');
+
+    const openModal = (event) => {
+        event.preventDefault();
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('cf103-modal-open');
+        closeBtn.focus();
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('cf103-modal-open');
+    };
+
+    openers.forEach((button) => {
+        button.addEventListener('click', openModal);
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+})();
+</script>

@@ -1,0 +1,149 @@
+/* mobile nav - start  */
+div#nav-menu-popup {
+    text-transform: uppercase;
+    line-height: 30px;
+    z-index: 9999;
+}
+
+span.nav-menu-item-toggle {
+    margin: -2px 10px 0 0;
+}
+
+#nav-menu-popup .nav-menu .nav-menu-item .nav-menu-item-content .nav-menu-item-toggle i {
+    font-size: 18px !important;
+}
+
+#nav-menu-popup .nav-menu .nav-menu-item a {
+    font-weight: 400;
+}
+
+.nav-menu-mobile span::before {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#nav-menu-popup .nav-menu-body .nav-menu .nav-menu-item {
+    border-radius: 4px;
+    margin-bottom: 6px;
+    padding: 3px;
+    margin-bottom: 6px;
+}
+
+#nav-menu-popup .nav-menu-body .close-menu {
+}
+/* mobile nav - end  */
+
+.nav-menu a {
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: none!important;
+}
+
+/* fixed navigation on scroll - start  */
+div#section-ulHshRbOn.scrolled {
+    position: fixed;
+    border-radius: 0px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 0px;
+}
+
+div#section-ulHshRbOn.scrolled > .inner {
+    max-width: 96%;
+}
+/* fixed navigation on scroll - end  */
+
+/* top bar */
+div#col--dpRPmylOn .c-image {
+    max-width: 36px;
+}
+
+/* header navigation */
+#section-ulHshRbOn,#section-25-0UWFiv {
+    z-index: 9;
+}
+
+/* button style */
+.c-button a, .c-button buton {
+    border-radius: 5px;
+}
+
+.c-button a.custom:hover, .c-button buton.custom:hover {
+}
+
+/* header banner */
+#section-LsQolnM1y {
+    height: 97vh;
+}
+
+/* Welcome section */
+#row-PHslmHS5ha .image-container {
+    width: 70px;
+    height: 70px;
+    margin: -40px auto 0 auto;
+    border-radius: 50%;
+}
+
+div#row-PHslmHS5ha .image-container:after {
+    position: absolute;
+    top: 0px;
+    right: -7px;
+    bottom: -7px;
+    left: -7px;
+    content: '';
+    border-radius: 50%;
+    width: 86px;
+    margin: -47px auto 0 auto;
+}
+
+div#row-PHslmHS5ha .c-column {
+    margin-bottom: 70px;
+}
+
+/* Coaches section */
+div#row-Zis5lMepjm .c-image .image-container img {
+    width: 100%;
+}
+
+/* full width inner */
+#section-oadhZZQDO > .inner {
+    max-width: 100% !important;
+}
+
+/* full width images section */
+div#section-oadhZZQDO .c-column {
+    padding: 0;
+}
+
+div#row-KSdeR4bBCJ .c-column .bg {
+    background-size: cover;
+}
+
+/* footer */
+div#col-HEYJ3w_xHQ .c-image {
+    border-radius: 50%;
+    width: 40px;
+    height: 42px;
+    max-width: 44px;
+    margin: auto;
+}
+
+@media (max-width:768px) {
+
+  /* top bar */
+    div#section-25-0UWFiv {
+        padding: 10px 0 4px 0;
+    }
+  /* top header*/
+    div#section-ulHshRbOn.scrolled  #row-ERcVC9JxUr {
+        padding-top: 5px;
+        padding-bottom: 5px
+    }
+  /* top banner */
+    #section-LsQolnM1y {
+        padding-top: 130px;
+    }
+}

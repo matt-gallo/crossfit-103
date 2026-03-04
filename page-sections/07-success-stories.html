@@ -1,0 +1,163 @@
+<section class="stories">
+    <header>
+        <span>Member Wins</span>
+        <h2>Real people building real strength, resilience, and community</h2>
+        <p>From brand-new athletes to masters competitors, CrossFit 103 helps people move better, feel better, and show up bigger for life.</p>
+    </header>
+    <div class="stories-grid">
+        <article class="story">
+            <div class="results">Down 32 lbs • Off (2) medications • PR pull-ups</div>
+            <p>“I joined for weight loss, but the confidence and friendships are the reason I stay. Coaches meet you where you are and push you just enough.”</p>
+            <div class="member">
+                <strong>Andrea F.</strong>
+                <span>Member since 2022 • Busy mom of three</span>
+            </div>
+        </article>
+        <article class="story">
+            <div class="results">+45 lb back squat • First RX Open • 10k row challenge</div>
+            <p>“The programming keeps me improving every cycle. Having Malik keep my mobility on point means I can train hard without flare-ups.”</p>
+            <div class="member">
+                <strong>Chris L.</strong>
+                <span>Member since 2019 • Firefighter</span>
+            </div>
+        </article>
+        <article class="story">
+            <div class="results">Stronger at 52 • Masters podium • Daily energy boost</div>
+            <p>“CrossFit 103 gave me structure, accountability, and a crew cheering me on. I&rsquo;m fitter now than I was in my 30s.”</p>
+            <div class="member">
+                <strong>Maria H.</strong>
+                <span>Member since 2021 • Masters athlete</span>
+            </div>
+        </article>
+    </div>
+    <div class="cta-strip">
+        <strong>Want your story featured next?</strong>
+        <span>Share where you&rsquo;re starting from—we&rsquo;ll map the path forward.</span>
+        <a href="#">Book Your Free Consult</a>
+    </div>
+</section>
+
+<style>
+    .stories {
+        width: min(1150px, 100%);
+        margin: 0 auto;
+        display: grid;
+        gap: clamp(40px, 6vw, 68px);
+        color: #e2e8f0;
+    }
+
+    .stories header {
+        display: grid;
+        gap: 16px;
+        max-width: 680px;
+    }
+
+    .stories header span {
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #22d3ee;
+    }
+
+    .stories header h2 {
+        margin: 0;
+        font-size: clamp(34px, 5vw, 50px);
+        line-height: 1.06;
+    }
+
+    .stories header p {
+        margin: 0;
+        font-size: 18px;
+        color: rgba(148, 163, 184, 0.9);
+    }
+
+    .stories-grid {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .story {
+        display: grid;
+        gap: 20px;
+        padding: 32px;
+        border-radius: 24px;
+        background: linear-gradient(160deg, rgba(15, 23, 42, 0.92), rgba(45, 55, 72, 0.6));
+        border: 1px solid rgba(34, 211, 238, 0.16);
+        position: relative;
+    }
+
+    .story::before {
+        content: "\201C";
+        position: absolute;
+        top: 18px;
+        left: 26px;
+        font-size: 80px;
+        color: rgba(34, 211, 238, 0.2);
+    }
+
+    .results {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: #22d3ee;
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .story p {
+        margin: 0;
+        line-height: 1.7;
+        color: rgba(226, 232, 240, 0.88);
+    }
+
+    .member {
+        display: grid;
+        gap: 4px;
+    }
+
+    .member strong {
+        font-size: 16px;
+        color: #f8fafc;
+    }
+
+    .member span {
+        font-size: 14px;
+        color: rgba(148, 163, 184, 0.9);
+    }
+
+    .cta-strip {
+        padding: 28px 32px;
+        border-radius: 22px;
+        background: rgba(34, 211, 238, 0.12);
+        border: 1px solid rgba(34, 211, 238, 0.2);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px;
+        color: #f8fafc;
+    }
+
+    .cta-strip a {
+        margin-left: auto;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+        color: #0f172a;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 16px 30px rgba(14, 165, 233, 0.26);
+    }
+
+    @media (max-width: 640px) {
+        .cta-strip {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cta-strip a {
+            margin-left: 0;
+        }
+    }
+</style>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFit 103 - Mobile Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        .mobile-nav {
+            background-color: #c76771;
+            padding: 15px 20px;
+            position: relative;
+        }
+
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ebeef2;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #071326;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: 2px solid #ebeef2;
+            color: #ebeef2;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background-color: #071326;
+            color: #ebeef2;
+        }
+
+        .dropdown-menu {
+            display: none;
+            background-color: #c76771;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown-menu.open {
+            display: block;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 15px 20px;
+            color: #ebeef2;
+            text-decoration: none;
+            border-bottom: 1px solid #555;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background-color: #071326;
+            color: #ebeef2;
+        }
+
+        .menu-item.has-submenu::after {
+            content: '▶';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item.has-submenu.open::after {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .submenu {
+            display: none;
+            background-color: #a85a60;
+        }
+
+        .submenu.open {
+            display: block;
+        }
+
+        .submenu .menu-item {
+            padding-left: 40px;
+            border-bottom: 1px solid #444;
+            font-size: 14px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px 20px;
+            border-top: 1px solid #555;
+            margin-top: 10px;
+        }
+
+        .action-btn {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .btn-primary {
+            background-color: #c76771;
+            color: #071326;
+        }
+
+        .btn-primary:hover {
+            background-color: #a85a60;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ebeef2;
+            border: 2px solid #ebeef2;
+        }
+
+        .btn-secondary:hover {
+            background-color: #071326;
+            color: #ebeef2;
+            transform: translateY(-2px);
+        }
+
+        .btn-chat {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-chat:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="mobile-nav">
+        <div class="nav-header">
+            <a href="/" class="logo">CrossFit 103</a>
+            <button class="menu-toggle" onclick="toggleMenu()">MENU</button>
+        </div>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="/" class="menu-item">Home</a>
+            <a href="/memberships" class="menu-item">Memberships</a>
+            <a href="/coaches" class="menu-item">Coaches</a>
+            <a href="/schedule" class="menu-item">Schedule</a>
+            <div class="menu-item has-submenu" onclick="toggleSubmenu(this)">
+                More
+                <div class="submenu">
+                    <a href="/faqs" class="menu-item">FAQs</a>
+                    <a href="/about" class="menu-item">About</a>
+                    <a href="/contact" class="menu-item">Contact Us</a>
+                    <a href="/programs" class="menu-item">Programs</a>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="/get-started" class="action-btn btn-primary">Get Started</a>
+                <a href="/drop-in" class="action-btn btn-secondary">Drop In</a>
+                <button class="action-btn btn-chat" onclick="openChat()">Ask a Question</button>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const dropdown = document.getElementById('dropdownMenu');
+            const toggle = document.querySelector('.menu-toggle');
+
+            dropdown.classList.toggle('open');
+            toggle.textContent = dropdown.classList.contains('open') ? 'CLOSE' : 'MENU';
+        }
+
+        function toggleSubmenu(element) {
+            const submenu = element.querySelector('.submenu');
+            element.classList.toggle('open');
+            submenu.classList.toggle('open');
+        }
+
+        function openChat() {
+            // Replace with your actual chat widget implementation
+            // This is a placeholder for AI webchat integration
+            alert('Opening AI chat widget...\n\nReplace this with your actual chat implementation (e.g., Intercom, Zendesk, or custom AI chat)');
+
+            // Example implementations:
+            // For Intercom: Intercom('show');
+            // For Zendesk: zE('webWidget', 'open');
+            // For custom implementation: window.yourChatWidget.open();
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.mobile-nav');
+            const dropdown = document.getElementById('dropdownMenu');
+
+            if (!nav.contains(event.target) && dropdown.classList.contains('open')) {
+                toggleMenu();
+            }
+        });
+
+        // Close submenu when clicking main menu items
+        document.querySelectorAll('.menu-item:not(.has-submenu)').forEach(item => {
+            item.addEventListener('click', () => {
+                const dropdown = document.getElementById('dropdownMenu');
+                if (dropdown.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

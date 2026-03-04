@@ -1,0 +1,183 @@
+<section class="memberships">
+    <header>
+        <span>Memberships</span>
+        <h2>Simple, flexible options with coaching baked in</h2>
+        <p>Every plan starts with a Goal Setting Session so we can tailor the experience to your training history, schedule, and lifestyle.</p>
+    </header>
+    <div class="plans">
+        <article class="plan">
+            <h3>3x Per Week</h3>
+            <div class="price">$179<span>/month</span></div>
+            <ul>
+                <li>Any three coach-led classes weekly</li>
+                <li>Monthly accountability check-in</li>
+                <li>Access to Open Gym add-on ($25)</li>
+            </ul>
+            <a href="#">Start with On-Ramp</a>
+        </article>
+        <article class="plan featured">
+            <span class="tag">Most Popular</span>
+            <h3>Unlimited</h3>
+            <div class="price">$219<span>/month</span></div>
+            <ul>
+                <li>Unlimited classes + Open Gym</li>
+                <li>Quarterly DEXA or InBody scans</li>
+                <li>Priority access to workshops &amp; clinics</li>
+            </ul>
+            <a href="#">Claim Your Spot</a>
+        </article>
+        <article class="plan">
+            <h3>Hybrid Coaching</h3>
+            <div class="price">$349<span>/month</span></div>
+            <ul>
+                <li>Unlimited classes + Open Gym</li>
+                <li>Bi-weekly 1:1 coaching sessions</li>
+                <li>Custom nutrition &amp; recovery plan</li>
+            </ul>
+            <a href="#">Chat With A Coach</a>
+        </article>
+        <article class="plan">
+            <h3>Masters 40+</h3>
+            <div class="price">$189<span>/month</span></div>
+            <ul>
+                <li>Age-appropriate programming</li>
+                <li>Low-impact strength &amp; skill tracks</li>
+                <li>Quarterly bloodwork consultation</li>
+            </ul>
+            <a href="#">Join The Crew</a>
+        </article>
+    </div>
+    <p class="footnote">*All memberships include a cancellation freeze policy, drop-in buddy passes, and access to community events.</p>
+</section>
+
+<style>
+    .memberships {
+        width: min(1150px, 100%);
+        margin: 0 auto;
+        display: grid;
+        gap: clamp(36px, 6vw, 64px);
+        color: #e2e8f0;
+    }
+
+    .memberships header {
+        display: grid;
+        gap: 16px;
+        max-width: 700px;
+    }
+
+    .memberships header span {
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #38bdf8;
+    }
+
+    .memberships header h2 {
+        margin: 0;
+        font-size: clamp(34px, 5vw, 50px);
+    }
+
+    .memberships header p {
+        margin: 0;
+        font-size: 18px;
+        color: rgba(148, 163, 184, 0.9);
+    }
+
+    .plans {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .plan {
+        position: relative;
+        background: linear-gradient(160deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.7));
+        border: 1px solid rgba(56, 189, 248, 0.16);
+        border-radius: 26px;
+        padding: 36px 32px 40px;
+        display: grid;
+        gap: 18px;
+        color: rgba(203, 213, 225, 0.9);
+    }
+
+    .plan.featured {
+        border-color: rgba(34, 211, 238, 0.4);
+        box-shadow: 0 28px 60px rgba(14, 165, 233, 0.28);
+    }
+
+    .plan .tag {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.14);
+        color: #22d3ee;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .plan h3 {
+        margin: 0;
+        font-size: 22px;
+        color: #f8fafc;
+    }
+
+    .plan .price {
+        font-size: 46px;
+        font-weight: 700;
+        color: #f8fafc;
+    }
+
+    .plan .price span {
+        font-size: 16px;
+        color: rgba(148, 163, 184, 0.8);
+        font-weight: 500;
+        margin-left: 8px;
+    }
+
+    .plan ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        color: rgba(203, 213, 225, 0.9);
+        font-size: 15px;
+    }
+
+    .plan ul li::before {
+        content: "\2714";
+        color: #38bdf8;
+        margin-right: 12px;
+    }
+
+    .plan a {
+        justify-self: start;
+        padding: 12px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        background: rgba(56, 189, 248, 0.14);
+        color: #38bdf8;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .plan.featured a {
+        background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+        color: #0f172a;
+    }
+
+    .plan a:hover {
+        background: rgba(56, 189, 248, 0.24);
+        color: #22d3ee;
+    }
+
+    .footnote {
+        font-size: 14px;
+        color: rgba(148, 163, 184, 0.78);
+        margin: 0;
+        max-width: 640px;
+    }
+</style>

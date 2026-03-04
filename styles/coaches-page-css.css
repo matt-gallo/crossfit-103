@@ -1,0 +1,133 @@
+/* Coaches Page - Round Image Containers */
+
+/* Target all images on coaches page and wrap them in round containers */
+.coaches-page img,
+[data-page="coaches"] img,
+body.coaches img,
+#coaches img,
+.coach-image img,
+.staff-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 4px solid #c76771 !important;
+    box-shadow: 0 4px 15px rgba(199, 103, 113, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Image containers */
+.coaches-page .image-container,
+[data-page="coaches"] .image-container,
+body.coaches .image-container,
+#coaches .image-container,
+.coach-image,
+.staff-image {
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    aspect-ratio: 1 / 1 !important;
+    position: relative !important;
+    background: #ebeef2 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Hover effects for coach images */
+.coaches-page img:hover,
+[data-page="coaches"] img:hover,
+body.coaches img:hover,
+#coaches img:hover,
+.coach-image img:hover,
+.staff-image img:hover {
+    transform: scale(1.05) !important;
+    border-color: #071326 !important;
+    box-shadow: 0 8px 25px rgba(199, 103, 113, 0.5) !important;
+}
+
+/* Alternative selectors for different page builders */
+/* GHL/ClickFunnels style selectors */
+div[id*="coach"] img,
+div[class*="coach"] img,
+div[id*="staff"] img,
+div[class*="staff"] img,
+div[id*="team"] img,
+div[class*="team"] img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 4px solid #c76771 !important;
+    box-shadow: 0 4px 15px rgba(199, 103, 113, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+div[id*="coach"],
+div[class*="coach"],
+div[id*="staff"],
+div[class*="staff"],
+div[id*="team"],
+div[class*="team"] {
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    aspect-ratio: 1 / 1 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .coaches-page img,
+    [data-page="coaches"] img,
+    body.coaches img,
+    #coaches img,
+    .coach-image img,
+    .staff-image img,
+    div[id*="coach"] img,
+    div[class*="coach"] img,
+    div[id*="staff"] img,
+    div[class*="staff"] img,
+    div[id*="team"] img,
+    div[class*="team"] img {
+        border-width: 3px !important;
+    }
+
+    .coaches-page .image-container,
+    [data-page="coaches"] .image-container,
+    body.coaches .image-container,
+    #coaches .image-container,
+    .coach-image,
+    .staff-image,
+    div[id*="coach"],
+    div[class*="coach"],
+    div[id*="staff"],
+    div[class*="staff"],
+    div[id*="team"],
+    div[class*="team"] {
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+/* Fallback - apply to all images in specific sections if above doesn't work */
+section[id*="coach"] img,
+section[class*="coach"] img,
+.coach-section img,
+.team-section img,
+.staff-section img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 4px solid #c76771 !important;
+    box-shadow: 0 4px 15px rgba(199, 103, 113, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+section[id*="coach"] .image-container,
+section[class*="coach"] .image-container,
+.coach-section .image-container,
+.team-section .image-container,
+.staff-section .image-container {
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    aspect-ratio: 1 / 1 !important;
+    position: relative !important;
+    background: #ebeef2 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}

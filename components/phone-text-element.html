@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone & Instagram Elements</title>
+    <style>
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .icon-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            margin: 0;
+            vertical-align: top;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .icon svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        .hover-text {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .hover-text::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #333;
+        }
+
+        .icon-container:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+            bottom: -40px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            padding: 0;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        /* Modern CF103 Rotator Styles */
+        .cf103-rotator {
+            --cf-red: #e63946;
+            --cf-red-dark: #c62828;
+            --cf-black: #111111;
+            --cf-white: #ffffff;
+
+            position: relative;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0.6rem 1.2rem;
+            border: 3px solid var(--cf-red);
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--cf-white) 0%, #f8f8f8 100%);
+            color: var(--cf-black);
+            font: 800 32px/1.1 'Bebas Neue', 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            letter-spacing: 1px;
+            user-select: none;
+            cursor: default;
+            box-shadow:
+                0 4px 15px rgba(230, 57, 70, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            overflow: hidden;
+        }
+
+        .cf103-rotator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .cf103-rotator:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 25px rgba(230, 57, 70, 0.4),
+                0 4px 15px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-color: var(--cf-red-dark);
+        }
+
+        .cf103-rotator:hover::before {
+            transform: translateX(100%);
+        }
+
+        .cf103-word {
+            display: inline-block;
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            will-change: opacity, transform;
+            white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, var(--cf-black) 0%, #333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cf103-word.animate-out {
+            opacity: 0;
+            transform: translateY(-15px) rotateX(-90deg) scale(0.8);
+        }
+
+        .cf103-word.animate-in {
+            opacity: 0;
+            transform: translateY(15px) rotateX(90deg) scale(1.2);
+        }
+
+        @keyframes pulse-border {
+            0%, 100% { border-color: var(--cf-red); }
+            50% { border-color: var(--cf-red-dark); }
+        }
+
+        .cf103-rotator.animating {
+            animation: pulse-border 0.5s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- CF103 Modern Single-Word Rotator -->
+        <div class="cf103-rotator"
+             role="status"
+             aria-live="polite">
+          <span class="cf103-word"
+                data-words="CrossFit,HYROX,Youth Training,Personal Training,Nutrition,OpenGym">
+            CrossFit
+          </span>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <div class="icon-container" onclick="openTextMessage()">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v13H7V4zm0 15h10v1H7v-1z"/>
+                        <circle cx="12" cy="18.5" r=".8"/>
+                    </svg>
+                </div>
+                <div class="hover-text">text us</div>
+            </div>
+
+            <div class="icon-container" onclick="openInstagram()">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <div class="hover-text">follow us</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTextMessage() {
+            // Replace with your business phone number
+            const businessPhoneNumber = '1234567890';
+
+            // Default message (optional)
+            const defaultMessage = 'Hi! I\'d like to get in touch.';
+
+            // Create SMS URL
+            const smsUrl = `sms:${businessPhoneNumber}?body=${encodeURIComponent(defaultMessage)}`;
+
+            // Open SMS app
+            window.location.href = smsUrl;
+        }
+
+        function openInstagram() {
+            // Replace with your Instagram username
+            const instagramUsername = 'yourusername';
+
+            // Create Instagram URL
+            const instagramUrl = `https://www.instagram.com/${instagramUsername}`;
+
+            // Open Instagram profile in new tab
+            window.open(instagramUrl, '_blank');
+        }
+
+        // Enhanced CF103 Rotator with Modern Effects
+        (function(){
+            const rotator = document.querySelector('.cf103-rotator');
+            const span = rotator.querySelector('.cf103-word');
+
+            // Cycle timing in ms (3000 = 3s, 4000 = 4s)
+            const INTERVAL = 3400;
+            const TRANSITION_DURATION = 500;
+
+            const words = (span.getAttribute('data-words') ||
+                          'CrossFit,HYROX,Youth,Personal,Nutrition,OpenGym')
+                          .split(',')
+                          .map(w => w.trim())
+                          .filter(Boolean);
+
+            let i = 0;
+            let timer = null;
+            let paused = false;
+            let isAnimating = false;
+
+            function modernSwap(){
+                if(paused || isAnimating) return;
+
+                isAnimating = true;
+                rotator.classList.add('animating');
+
+                // Animate out
+                span.classList.add('animate-out');
+
+                setTimeout(() => {
+                    i = (i + 1) % words.length;
+                    span.textContent = words[i];
+
+                    // Reset classes
+                    span.classList.remove('animate-out');
+                    span.classList.add('animate-in');
+
+                    // Animate in
+                    requestAnimationFrame(() => {
+                        span.classList.remove('animate-in');
+                        span.style.opacity = '1';
+                        span.style.transform = 'translateY(0) rotateX(0deg) scale(1)';
+                    });
+
+                    setTimeout(() => {
+                        rotator.classList.remove('animating');
+                        isAnimating = false;
+                    }, 300);
+
+                }, TRANSITION_DURATION);
+            }
+
+            function play(){
+                stop();
+                timer = setInterval(modernSwap, INTERVAL);
+            }
+
+            function stop(){
+                if(timer) clearInterval(timer);
+                timer = null;
+            }
+
+            // Enhanced interaction handlers
+            ['mouseenter', 'focusin'].forEach(evt =>
+                rotator.addEventListener(evt, () => {
+                    paused = true;
+                    rotator.style.transform = 'translateY(-2px) scale(1.02)';
+                })
+            );
+
+            ['mouseleave', 'focusout'].forEach(evt =>
+                rotator.addEventListener(evt, () => {
+                    paused = false;
+                    rotator.style.transform = '';
+                })
+            );
+
+            // Pause when tab not visible
+            document.addEventListener('visibilitychange', () => {
+                document.hidden ? stop() : play();
+            });
+
+            // Enhanced mobile touch support
+            rotator.addEventListener('touchstart', () => {
+                rotator.style.transform = 'translateY(-1px) scale(1.01)';
+            });
+
+            rotator.addEventListener('touchend', () => {
+                rotator.style.transform = '';
+            });
+
+            // Initialize
+            play();
+        })();
+    </script>
+</body>
+</html>

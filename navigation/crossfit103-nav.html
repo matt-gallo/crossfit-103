@@ -1,0 +1,218 @@
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="/">
+            <span class="brand-mark">103</span>
+            <span class="brand-copy">
+                <span>CrossFit 103</span>
+                <span>Strength &amp; Community</span>
+            </span>
+        </a>
+
+        <div class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav aria-label="Primary">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/programs">Programs</a></li>
+                <li><a href="/memberships">Memberships</a></li>
+                <li><a href="/schedule">Schedule</a></li>
+                <li><a href="/coaches">Coaches</a></li>
+                <li><a href="/success-stories">Success Stories</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/faq">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <a class="cta-button" href="/contact">Book Intro Session</a>
+    </div>
+</header>
+
+<style>
+    .site-header {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+    }
+
+    .header-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+
+    .brand-mark {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #fe512f, #f92247);
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    .brand-copy {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+    }
+
+    .brand-copy span:first-child {
+        font-size: 18px;
+        font-weight: 700;
+        color: #111111;
+    }
+
+    .brand-copy span:last-child {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: #fe512f;
+    }
+
+    nav {
+        flex: 1;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        gap: 26px;
+        font-size: 15px;
+    }
+
+    .nav-menu a {
+        text-decoration: none;
+        color: #333333;
+        font-weight: 600;
+        transition: color 0.25s ease;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a:focus {
+        color: #fe512f;
+    }
+
+    .cta-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 22px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #fe512f, #f92247);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 8px 18px rgba(249, 34, 71, 0.22);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .cta-button:hover,
+    .cta-button:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 26px rgba(249, 34, 71, 0.3);
+    }
+
+    .mobile-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+    }
+
+    .mobile-toggle span {
+        width: 24px;
+        height: 3px;
+        border-radius: 999px;
+        background: #111111;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    @media (max-width: 900px) {
+        .header-inner {
+            flex-wrap: wrap;
+        }
+
+        nav {
+            order: 3;
+            width: 100%;
+        }
+
+        .nav-menu {
+            position: relative;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 0 4px;
+            display: none;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+
+        .cta-button {
+            order: 2;
+        }
+
+        .mobile-toggle {
+            display: inline-flex;
+            order: 1;
+            margin-left: auto;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .header-inner {
+            padding: 18px;
+        }
+
+        .cta-button {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+
+<script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    const toggleMenu = () => {
+        navMenu.classList.toggle('active');
+    };
+
+    mobileToggle.addEventListener('click', toggleMenu);
+    mobileToggle.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleMenu();
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!mobileToggle.contains(event.target) && !navMenu.contains(event.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
+</script>

@@ -1,0 +1,138 @@
+<section class="facility">
+    <header>
+        <span>The Space</span>
+        <h2>7,500 sq ft of purpose-built space—no mirrors, all muscle</h2>
+        <p>Every zone inside CrossFit 103 is engineered for flow, efficiency, and stoke so you can get in, work hard, and feel unstoppable.</p>
+    </header>
+    <div class="tour-grid">
+        <article class="item">
+            <span class="badge">Warm-up Zone</span>
+            <strong>Dedicated Mobility Bay</strong>
+            <span>PVC rigs, foam rollers, and Theragun stations let you prep and recover without fighting for floor space.</span>
+        </article>
+        <article class="item">
+            <span class="badge">Strength Deck</span>
+            <strong>Competition Rigs &amp; Platforms</strong>
+            <span>8 full lanes with Rogue rigs, jerk blocks, and kilo plates keep classes flowing even on heavy lifting days.</span>
+        </article>
+        <article class="item">
+            <span class="badge">Conditioning</span>
+            <strong>Cardio Arsenal</strong>
+            <span>Assault runners, Concept2 rowers &amp; skiers, Echo bikes, and sled tracks for metabolic conditioning that hits different.</span>
+        </article>
+        <article class="item">
+            <span class="badge">Recovery</span>
+            <strong>Infrared &amp; Cold Plunge</strong>
+            <span>Cooldown suite with infrared sauna, cold plunge tubs, and guided breathwork playlists for post-WOD resets.</span>
+        </article>
+        <article class="item">
+            <span class="badge">Community</span>
+            <strong>Lounge &amp; Work Bar</strong>
+            <span>Grab a protein shake, review WOD notes, or hang with your crew before and after class with high-speed WiFi.</span>
+        </article>
+        <article class="item">
+            <span class="badge">Services</span>
+            <strong>In-House Bodywork</strong>
+            <span>Chiropractic, PT, and sports massage rooms staffed by pros who understand CrossFit demands.</span>
+        </article>
+    </div>
+    <div class="facility-callout">
+        <strong>Want the full walk-through?</strong>
+        <span>Schedule a visit and we&rsquo;ll show you around, introduce the crew, and dial in your goals.</span>
+        <a href="#">Book A Tour</a>
+    </div>
+</section>
+
+<style>
+    .facility {
+        width: min(1160px, 100%);
+        margin: 0 auto;
+        display: grid;
+        gap: clamp(36px, 6vw, 64px);
+        color: #e2e8f0;
+    }
+
+    .facility header {
+        max-width: 700px;
+        display: grid;
+        gap: 16px;
+    }
+
+    .facility header span {
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #38bdf8;
+    }
+
+    .facility header h2 {
+        margin: 0;
+        font-size: clamp(34px, 5vw, 50px);
+    }
+
+    .facility header p {
+        margin: 0;
+        font-size: 18px;
+        color: rgba(148, 163, 184, 0.9);
+    }
+
+    .tour-grid {
+        display: grid;
+        gap: 26px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .item {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(165deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.72));
+        border: 1px solid rgba(56, 189, 248, 0.18);
+        padding: 28px;
+        display: grid;
+        gap: 16px;
+    }
+
+    .item strong {
+        font-size: 18px;
+        color: #f8fafc;
+    }
+
+    .item span {
+        font-size: 15px;
+        color: rgba(203, 213, 225, 0.88);
+    }
+
+    .badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(34, 211, 238, 0.14);
+        color: #22d3ee;
+    }
+
+    .facility-callout {
+        padding: 30px;
+        border-radius: 24px;
+        background: rgba(34, 211, 238, 0.14);
+        border: 1px solid rgba(34, 211, 238, 0.24);
+        display: grid;
+        gap: 12px;
+        color: #f8fafc;
+    }
+
+    .facility-callout a {
+        justify-self: start;
+        padding: 12px 20px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+        color: #0f172a;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 16px 34px rgba(14, 165, 233, 0.28);
+    }
+</style>

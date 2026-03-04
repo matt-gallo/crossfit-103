@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stronger with Sam Youth Training | CrossFit 103</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cf103-bg: #041020;
+            --cf103-panel: #071424;
+            --cf103-border: rgba(233, 236, 238, 0.1);
+            --cf103-text: #e9ecee;
+            --cf103-muted: rgba(233, 236, 238, 0.68);
+            --cf103-accent: #218bf6;
+            --cf103-accent-dark: #176bc4;
+            --cf103-white: #ffffff;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', 'Poppins', 'Segoe UI', sans-serif;
+            color: var(--cf103-text);
+            background: var(--cf103-bg);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .cf103-detail {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cf103-detail__container {
+            width: min(1180px, 92vw);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cf103-detail__hero {
+            position: relative;
+            min-height: 70vh;
+            display: grid;
+            align-items: end;
+            padding: 120px 0 80px;
+            color: var(--cf103-white);
+            background: linear-gradient(190deg, rgba(4, 16, 32, 0.35), rgba(4, 16, 32, 0.92)),
+                        url('https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/68c9c14e82702ca79c3c5a0e.png') center/cover;
+        }
+
+        .cf103-detail__hero-inner {
+            max-width: 640px;
+        }
+
+        .cf103-detail__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.78rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: rgba(233, 236, 238, 0.7);
+        }
+
+        .cf103-detail__eyebrow::before {
+            content: '';
+            width: 52px;
+            height: 1px;
+            background: rgba(233, 236, 238, 0.38);
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 5vw, 3.6rem);
+            margin: 28px 0 16px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1.08;
+        }
+
+        .cf103-detail__lead {
+            margin: 0 0 32px;
+            color: rgba(233, 236, 238, 0.82);
+            font-size: 1.05rem;
+        }
+
+        .cf103-detail__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 34px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.88rem;
+            border: 1px solid transparent;
+            background: var(--cf103-accent);
+            box-shadow: 0 20px 40px rgba(33, 139, 246, 0.28);
+            transition: transform 0.22s ease;
+        }
+
+        .cf103-detail__btn:hover {
+            background: var(--cf103-accent-dark);
+            transform: translateY(-2px);
+        }
+
+        .cf103-detail__section {
+            padding: 88px 0;
+            border-bottom: 1px solid var(--cf103-border);
+        }
+
+        .cf103-detail__section:last-of-type {
+            border-bottom: none;
+        }
+
+        .cf103-detail__section header {
+            max-width: 720px;
+            margin-bottom: 40px;
+        }
+
+        .cf103-detail__section h2 {
+            margin: 0 0 16px;
+            font-size: clamp(2rem, 3.6vw, 2.8rem);
+            text-transform: uppercase;
+        }
+
+        .cf103-detail__section p {
+            margin: 0;
+            color: var(--cf103-muted);
+        }
+
+        .cf103-detail__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .cf103-detail__card {
+            background: var(--cf103-panel);
+            border: 1px solid var(--cf103-border);
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .cf103-detail__card h3 {
+            margin: 0 0 12px;
+            font-size: 1.05rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .cf103-detail__card p {
+            margin: 0;
+            color: var(--cf103-muted);
+        }
+
+        .cf103-detail__list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .cf103-detail__list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .cf103-detail__list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 6px;
+            background: var(--cf103-accent);
+        }
+
+        .cf103-detail__cta-panel {
+            background: linear-gradient(135deg, rgba(7, 20, 36, 0.92), rgba(0, 0, 0, 0.85));
+            border: 1px solid var(--cf103-border);
+            border-radius: 24px;
+            padding: 56px 48px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .cf103-detail__cta-panel p {
+            max-width: 560px;
+            margin: 16px auto 32px;
+            color: var(--cf103-muted);
+        }
+
+        .cf103-detail__reviews {
+            margin-top: 72px;
+            background: var(--cf103-panel);
+            border: 1px solid var(--cf103-border);
+            border-radius: 24px;
+            padding: 32px;
+        }
+
+        .cf103-detail__map {
+            margin: 72px 0 88px;
+            text-align: center;
+        }
+
+        .cf103-detail__map a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: 1px solid rgba(233, 236, 238, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        .cf103-detail-modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .cf103-detail-modal.active {
+            display: flex;
+        }
+
+        .cf103-detail-modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(4, 16, 32, 0.82);
+            backdrop-filter: blur(4px);
+        }
+
+        .cf103-detail-modal__dialog {
+            position: relative;
+            width: min(640px, 92vw);
+            max-height: 92vh;
+            background: rgba(233, 236, 238, 0.5);
+            border-radius: 18px;
+            border: 1px solid rgba(233, 236, 238, 0.6);
+            overflow: hidden;
+            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        .cf103-detail-modal__close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(7, 20, 36, 0.85);
+            color: var(--cf103-white);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cf103-detail-modal__close:hover {
+            background: rgba(33, 139, 246, 0.85);
+        }
+
+        .cf103-detail-modal__iframe {
+            width: 100%;
+            height: min(640px, 92vh);
+            border: none;
+        }
+
+        body.cf103-detail-modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .cf103-detail__hero {
+                padding: 100px 0 60px;
+                min-height: 60vh;
+            }
+
+            .cf103-detail__cta-panel {
+                padding: 44px 28px;
+            }
+
+            .cf103-detail__reviews {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="cf103-detail">
+        <section class="cf103-detail__hero">
+            <div class="cf103-detail__container">
+                <div class="cf103-detail__hero-inner">
+                    <span class="cf103-detail__eyebrow">Youth Strength &amp; Conditioning</span>
+                    <h1>Stronger with Sam builds confident Staten Island athletes.</h1>
+                    <p class="cf103-detail__lead">Our 8-week youth cycles blend age-appropriate strength, speed, and character coaching so middle and high school athletes develop safely and stay excited to train.</p>
+                    <a class="cf103-detail__btn cf103-detail-trigger" href="#get-started">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>Who it’s built for</h2>
+                    <p>Stronger with Sam serves athletes ages 10–17 who need structured training that supports school sports, club seasons, or general fitness.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Middle School</h3>
+                        <p>Build coordination, body awareness, and confidence in a screen-free environment that makes hard work fun.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>High School</h3>
+                        <p>Develop strength, speed, and conditioning with programming that complements varsity schedules and reduces injury risk.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Multi-Sport Athletes</h3>
+                        <p>Balance training across seasons with coaching that monitors fatigue, keeps mobility sharp, and supports recovery.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>What each cycle includes</h2>
+                    <p>Every block follows a clear progression so athletes and parents can track improvements week after week.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Movement Foundations</h3>
+                        <ul class="cf103-detail__list">
+                            <li>Skill sessions on squats, hinges, presses, and core stability with strict attention to form.</li>
+                            <li>Speed and agility drills that train footwork, reaction, and change of direction.</li>
+                        </ul>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Performance Tracking</h3>
+                        <ul class="cf103-detail__list">
+                            <li>Week 1 baseline testing with follow-up assessments at the end of each cycle.</li>
+                            <li>Parent updates highlighting wins, focus points, and at-home guidance.</li>
+                        </ul>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Support & Accountability</h3>
+                        <ul class="cf103-detail__list">
+                            <li>Optional Fit3D scans for older athletes to monitor posture and balance.</li>
+                            <li>Coach access for questions on nutrition, recovery, and game-day routines.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>Benefits for athletes and parents</h2>
+                    <p>Stronger with Sam isn’t just about getting sweaty—it’s about building durable athletes and confident humans.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Athletic Confidence</h3>
+                        <p>When athletes know how to move and recover, they show up to practices and tryouts ready to contribute.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Injury Prevention</h3>
+                        <p>Balanced strength work, mobility, and movement mechanics reinforce good habits that carry into every sport.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Structured Accountability</h3>
+                        <p>Weekly check-ins keep attendance consistent, and parents stay informed with clear communication.</p>
+                    </article>
+                </div>
+                <div class="cf103-detail__cta-panel">
+                    <h3>Reserve a youth consult</h3>
+                    <p>Talk with Coach Sam, tour the facility, and secure a spot in the next 8-week cycle.</p>
+                    <a class="cf103-detail__btn cf103-detail-trigger" href="#get-started">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cf103-detail__section">
+            <div class="cf103-detail__container">
+                <header>
+                    <h2>Cycle logistics</h2>
+                    <p>We make it easy to plan around school schedules and season changes.</p>
+                </header>
+                <div class="cf103-detail__grid">
+                    <article class="cf103-detail__card">
+                        <h3>Session Format</h3>
+                        <p>Two 60-minute sessions per week focused on strength, athletic development, and team building.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Flexible Drop-ins</h3>
+                        <p>Need extra work in-season? Drop-in punch cards keep skills sharp without overloading the schedule.</p>
+                    </article>
+                    <article class="cf103-detail__card">
+                        <h3>Parent Communication</h3>
+                        <p>Regular email recaps, progress notes, and quick access to Coach Sam for questions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="cf103-detail__container">
+            <section class="cf103-detail__reviews">
+                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-cc9c7540-cb14-46f1-a120-19c29085eae5" data-elfsight-app-lazy></div>
+            </section>
+
+            <section class="cf103-detail__map">
+                <h2>Parents, visit us in Charleston</h2>
+                <p>CrossFit 103 · 47 Trioka Way Staten Island, NY 10309</p>
+                <a href="https://maps.google.com/?q=CrossFit+103,47+Trioka+Way,Staten+Island+NY+10309" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </section>
+        </div>
+    </main>
+
+    <div class="cf103-detail-modal" id="cf103-detail-modal" aria-hidden="true">
+        <div class="cf103-detail-modal__backdrop" data-close="true"></div>
+        <div class="cf103-detail-modal__dialog" role="dialog" aria-modal="true" aria-label="General Interest Form">
+            <button type="button" class="cf103-detail-modal__close" aria-label="Close">×</button>
+            <iframe
+                src="https://api.leadconnectorhq.com/widget/form/hErjkS6v47Q0IA55lB3p"
+                class="cf103-detail-modal__iframe"
+                id="detail-popup-hErjkS6v47Q0IA55lB3p"
+                data-layout="{'id':'POPUP'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="General Interest Form"
+                data-height="457"
+                data-layout-iframe-id="detail-popup-hErjkS6v47Q0IA55lB3p"
+                data-form-id="hErjkS6v47Q0IA55lB3p"
+                title="General Interest Form"
+            ></iframe>
+        </div>
+    </div>
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    <script>
+        (function() {
+            const modal = document.getElementById('cf103-detail-modal');
+            if (!modal) return;
+            const openers = document.querySelectorAll('.cf103-detail-trigger');
+            const closeBtn = modal.querySelector('.cf103-detail-modal__close');
+            const backdrop = modal.querySelector('.cf103-detail-modal__backdrop');
+
+            const openModal = (event) => {
+                event.preventDefault();
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('cf103-detail-modal-open');
+                closeBtn.focus();
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('cf103-detail-modal-open');
+            };
+
+            openers.forEach((button) => button.addEventListener('click', openModal));
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

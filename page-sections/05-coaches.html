@@ -1,0 +1,163 @@
+<section class="coaches">
+    <header>
+        <span>Meet The Coaches</span>
+        <h2>12 certified coaches committed to technique, mindset, and longevity</h2>
+        <p>Every session is led by pros who know how to scale, cue, and motivate. Most started as CrossFit 103 members, so they coach with empathy and purpose.</p>
+    </header>
+    <div class="coach-grid">
+        <article class="coach-card">
+            <span class="badge">CF-L2</span>
+            <div>
+                <h3>Jenna Morales</h3>
+                <p class="role">Head Coach • Comp Team Lead</p>
+            </div>
+            <p class="bio">Nine-year CrossFit veteran and regional qualifier. Jenna programs our athlete track and leads the lifting seminars.</p>
+            <ul>
+                <li>USAW Level 1 Sport Performance Coach</li>
+                <li>Precision Nutrition Level 1</li>
+                <li>Specializes in olympic lifting &amp; mindset coaching</li>
+            </ul>
+        </article>
+        <article class="coach-card">
+            <span class="badge">PT, DPT</span>
+            <div>
+                <h3>Malik Peterson</h3>
+                <p class="role">Mobility &amp; Rehab Specialist</p>
+            </div>
+            <p class="bio">Doctor of Physical Therapy who keeps our athletes moving well. Malik builds corrective warm-ups and oversees recovery protocols.</p>
+            <ul>
+                <li>Functional Range Conditioning mobility cert</li>
+                <li>Hosts monthly movement clinics</li>
+                <li>Leads adaptive athlete program</li>
+            </ul>
+        </article>
+        <article class="coach-card">
+            <span class="badge">CF-L1</span>
+            <div>
+                <h3>Sophia Nguyen</h3>
+                <p class="role">Nutrition &amp; Lifestyle Coach</p>
+            </div>
+            <p class="bio">Sophia pairs CrossFit with nutrition consults, habit coaching, and accountability challenges to keep members dialed between classes.</p>
+            <ul>
+                <li>Macro coaching + in-body analysis</li>
+                <li>Group lifestyle resets every quarter</li>
+                <li>Hosts Sunday recovery &amp; breathwork sessions</li>
+            </ul>
+        </article>
+        <article class="coach-card">
+            <span class="badge">CF-L2</span>
+            <div>
+                <h3>Marcus Hall</h3>
+                <p class="role">On-Ramp Director</p>
+            </div>
+            <p class="bio">Guides every new athlete through the LaunchPad experience, ensuring fundamentals are solid and goals are mapped.</p>
+            <ul>
+                <li>Builds custom progression plans</li>
+                <li>Leader of our Masters 40+ program</li>
+                <li>CrossFit Judges Course certified</li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+<style>
+    .coaches {
+        width: min(1160px, 100%);
+        margin: 0 auto;
+        display: grid;
+        gap: clamp(36px, 6vw, 64px);
+        color: #e2e8f0;
+    }
+
+    .coaches header {
+        max-width: 720px;
+        display: grid;
+        gap: 18px;
+    }
+
+    .coaches header span {
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-size: 13px;
+        color: #38bdf8;
+    }
+
+    .coaches header h2 {
+        margin: 0;
+        font-size: clamp(32px, 4.8vw, 48px);
+        line-height: 1.08;
+    }
+
+    .coaches header p {
+        margin: 0;
+        font-size: 18px;
+        color: rgba(148, 163, 184, 0.92);
+    }
+
+    .coach-grid {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .coach-card {
+        background: linear-gradient(165deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.65));
+        border: 1px solid rgba(56, 189, 248, 0.12);
+        border-radius: 24px;
+        padding: 32px 28px;
+        display: grid;
+        gap: 18px;
+        position: relative;
+        overflow: hidden;
+        color: rgba(203, 213, 225, 0.9);
+    }
+
+    .coach-card h3 {
+        margin: 0;
+        font-size: 22px;
+        color: #f8fafc;
+    }
+
+    .coach-card .role {
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(148, 163, 184, 0.9);
+        margin: 6px 0 0;
+    }
+
+    .coach-card .bio {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+        color: rgba(203, 213, 225, 0.85);
+    }
+
+    .badge {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: rgba(56, 189, 248, 0.14);
+        color: #38bdf8;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+    }
+
+    .coach-card ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+        color: rgba(203, 213, 225, 0.88);
+        font-size: 15px;
+    }
+
+    .coach-card ul li::before {
+        content: "\2713";
+        color: #38bdf8;
+        margin-right: 12px;
+    }
+</style>

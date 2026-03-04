@@ -1,0 +1,193 @@
+<section class="schedule">
+    <header>
+        <span>Weekly Rhythm</span>
+        <h2>Pick a class block that matches your lifestyle</h2>
+        <p>Morning crushers, mid-day hustlers, and evening crews—there&rsquo;s a time slot ready for you, seven days a week.</p>
+    </header>
+    <div class="schedule-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Time Blocks</th>
+                    <th>Focus</th>
+                    <th>Coach</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Class"><strong>Sunrise Strength</strong><br><span class="tag">Mon • Wed • Fri</span></td>
+                    <td data-label="Time Blocks">5:30a • 6:30a • 7:30a</td>
+                    <td data-label="Focus">Barbell cycles + engine work</td>
+                    <td data-label="Coach">Jenna / Marcus</td>
+                </tr>
+                <tr>
+                    <td data-label="Class"><strong>Noon Express</strong><br><span class="tag">Weekdays</span></td>
+                    <td data-label="Time Blocks">12:00p</td>
+                    <td data-label="Focus">60-minute burner with fast transitions</td>
+                    <td data-label="Coach">Sophia / Malik</td>
+                </tr>
+                <tr>
+                    <td data-label="Class"><strong>Evening Crew</strong><br><span class="tag">Mon - Thu</span></td>
+                    <td data-label="Time Blocks">4:30p • 5:45p • 7:00p</td>
+                    <td data-label="Focus">Full programming + skill labs</td>
+                    <td data-label="Coach">Rotation</td>
+                </tr>
+                <tr>
+                    <td data-label="Class"><strong>Saturday Team WOD</strong><br><span class="tag">Saturday</span></td>
+                    <td data-label="Time Blocks">9:00a • 10:30a</td>
+                    <td data-label="Focus">Partner / team workouts</td>
+                    <td data-label="Coach">Entire Staff</td>
+                </tr>
+                <tr>
+                    <td data-label="Class"><strong>Open Gym</strong><br><span class="tag">Daily</span></td>
+                    <td data-label="Time Blocks">2:00p - 4:00p</td>
+                    <td data-label="Focus">Accessory work, skill practice</td>
+                    <td data-label="Coach">Supervisor on duty</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="schedule-cta" href="#">See Full Schedule</a>
+    <p class="schedule-note">Need childcare or adaptive coaching? Mention it in your intro session—we&rsquo;ll make it happen.</p>
+</section>
+
+<style>
+    .schedule {
+        width: min(1100px, 100%);
+        margin: 0 auto;
+        background: rgba(15, 23, 42, 0.82);
+        border-radius: 28px;
+        border: 1px solid rgba(148, 163, 184, 0.12);
+        padding: clamp(32px, 5vw, 60px);
+        display: grid;
+        gap: 36px;
+        color: #e2e8f0;
+    }
+
+    .schedule header {
+        display: grid;
+        gap: 18px;
+    }
+
+    .schedule header span {
+        font-size: 13px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #38bdf8;
+    }
+
+    .schedule header h2 {
+        margin: 0;
+        font-size: clamp(32px, 4.8vw, 46px);
+        line-height: 1.1;
+        color: #f8fafc;
+    }
+
+    .schedule header p {
+        margin: 0;
+        max-width: 620px;
+        font-size: 18px;
+        color: rgba(148, 163, 184, 0.85);
+    }
+
+    .schedule-table {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .schedule table {
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(15, 23, 42, 0.92);
+    }
+
+    .schedule th {
+        text-align: left;
+        padding: 18px 24px;
+        font-weight: 600;
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(148, 163, 184, 0.85);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .schedule td {
+        padding: 22px 24px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+        font-size: 16px;
+    }
+
+    .schedule tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .schedule .tag {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        background: rgba(56, 189, 248, 0.12);
+        color: #38bdf8;
+        margin-top: 6px;
+    }
+
+    .schedule-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        align-self: start;
+        padding: 14px 26px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #38bdf8, #22d3ee);
+        color: #0f172a;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 18px 40px rgba(32, 211, 238, 0.28);
+    }
+
+    .schedule-note {
+        margin: 0;
+        font-size: 14px;
+        color: rgba(148, 163, 184, 0.78);
+    }
+
+    @media (max-width: 720px) {
+        .schedule table,
+        .schedule thead,
+        .schedule tbody,
+        .schedule th,
+        .schedule td,
+        .schedule tr {
+            display: block;
+        }
+
+        .schedule th {
+            display: none;
+        }
+
+        .schedule td {
+            padding: 18px 18px 10px;
+            border: none;
+        }
+
+        .schedule td::before {
+            content: attr(data-label);
+            display: block;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(148, 163, 184, 0.7);
+            margin-bottom: 10px;
+        }
+
+        .schedule tbody tr {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+            margin-bottom: 12px;
+        }
+    }
+</style>

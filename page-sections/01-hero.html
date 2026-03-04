@@ -1,0 +1,130 @@
+<section class="hero">
+    <div class="eyebrow">Strength • Community • Grit</div>
+    <h1>Forge Your Strongest Self at CrossFit 103</h1>
+    <p class="subhead">Functional training, expert coaching, and a crew that pushes you further—every single session.</p>
+    <div class="cta-row">
+        <a class="cta cta-primary" href="#">Start Your Free Trial</a>
+        <a class="cta cta-secondary" href="#">View Class Schedule</a>
+    </div>
+    <div class="metrics">
+        <div>
+            <div class="metric-value">325+</div>
+            <div class="metric-label">Active Members</div>
+        </div>
+        <div>
+            <div class="metric-value">48</div>
+            <div class="metric-label">Weekly Classes</div>
+        </div>
+        <div>
+            <div class="metric-value">12</div>
+            <div class="metric-label">Certified Coaches</div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        width: min(1100px, 100%);
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 28px;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
+        overflow: hidden;
+        position: relative;
+        padding: 72px clamp(24px, 6vw, 96px);
+        color: #f8fafc;
+        background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 40%), linear-gradient(135deg, #0f172a, #111827);
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        pointer-events: none;
+    }
+
+    .eyebrow {
+        font-size: 14px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: #38bdf8;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 6vw, 72px);
+        line-height: 1.04;
+        margin-bottom: 24px;
+    }
+
+    .hero .subhead {
+        font-size: clamp(18px, 2.3vw, 22px);
+        line-height: 1.5;
+        color: #cbd5f5;
+        margin-bottom: 40px;
+        max-width: 620px;
+    }
+
+    .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 32px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .cta-primary {
+        color: #0f172a;
+        background: linear-gradient(135deg, #38bdf8, #22d3ee);
+        box-shadow: 0 18px 40px rgba(32, 211, 238, 0.4);
+    }
+
+    .cta-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 50px rgba(32, 211, 238, 0.55);
+    }
+
+    .cta-secondary {
+        color: #f8fafc;
+        border: 2px solid rgba(148, 163, 184, 0.4);
+        background: rgba(15, 23, 42, 0.7);
+    }
+
+    .cta-secondary:hover {
+        border-color: rgba(56, 189, 248, 0.8);
+        color: #38bdf8;
+    }
+
+    .metrics {
+        margin-top: 56px;
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        color: #e2e8f0;
+    }
+
+    .metric-value {
+        font-size: clamp(36px, 5vw, 48px);
+        font-weight: 700;
+        color: #38bdf8;
+    }
+
+    .metric-label {
+        font-size: 14px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(226, 232, 240, 0.7);
+    }
+</style>

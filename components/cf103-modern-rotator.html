@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CF103 Modern Rotator</title>
+    <style>
+        /* Big, Bold, Attractive Text Rotator */
+        .cf103-rotator {
+            --primary: #c76771;
+            --light: #ebeef2;
+            --dark: #071326;
+
+            position: relative !important;
+            display: block !important;
+            width: fit-content !important;
+            margin: 0 auto !important;
+            text-align: center !important;
+            padding: 20px 0 !important;
+            background: transparent !important;
+            user-select: none !important;
+            cursor: default !important;
+            box-sizing: border-box !important;
+        }
+
+        .cf103-word {
+            display: inline-block !important;
+            font-size: clamp(48px, 8vw, 96px) !important;
+            font-weight: 900 !important;
+            font-family: 'Impact', 'Arial Black', 'Bebas Neue', 'Montserrat', system-ui, sans-serif !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            color: var(--light) !important;
+            text-shadow:
+                3px 3px 0px var(--primary),
+                6px 6px 0px var(--dark),
+                9px 9px 15px rgba(0, 0, 0, 0.3) !important;
+            transform: translateY(0) scale(1) !important;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+            will-change: opacity, transform !important;
+            white-space: nowrap !important;
+            line-height: 1 !important;
+        }
+
+        .cf103-word.animate-out {
+            opacity: 0 !important;
+            transform: translateY(-30px) scale(0.9) !important;
+            filter: blur(2px) !important;
+        }
+
+        .cf103-word.animate-in {
+            opacity: 0 !important;
+            transform: translateY(30px) scale(1.1) !important;
+            filter: blur(2px) !important;
+        }
+
+        @keyframes cf103-glow {
+            0%, 100% {
+                text-shadow:
+                    3px 3px 0px var(--primary),
+                    6px 6px 0px var(--dark),
+                    9px 9px 15px rgba(0, 0, 0, 0.3) !important;
+            }
+            50% {
+                text-shadow:
+                    3px 3px 0px var(--primary),
+                    6px 6px 0px var(--dark),
+                    9px 9px 25px rgba(199, 103, 113, 0.6),
+                    0 0 30px rgba(199, 103, 113, 0.3) !important;
+            }
+        }
+
+        .cf103-rotator.animating .cf103-word {
+            animation: cf103-glow 0.6s ease-in-out !important;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .cf103-word {
+                font-size: clamp(36px, 12vw, 72px) !important;
+                letter-spacing: 1px !important;
+                text-shadow:
+                    2px 2px 0px var(--primary),
+                    4px 4px 0px var(--dark),
+                    6px 6px 10px rgba(0, 0, 0, 0.3) !important;
+            }
+        }
+    </style>
+</head>
+<!-- CF103 Modern Single-Word Rotator -->
+<div class="cf103-rotator"
+     role="status"
+     aria-live="polite">
+  <span class="cf103-word"
+        data-words="CrossFit,HYROX,Youth Training,Personal Training,Nutrition,OpenGym">
+    CrossFit
+  </span>
+</div>
+
+    <script>
+        // Enhanced CF103 Rotator with Modern Effects
+        (function(){
+            const rotator = document.querySelector('.cf103-rotator');
+            const span = rotator.querySelector('.cf103-word');
+
+            // Cycle timing in ms (3000 = 3s, 4000 = 4s)
+            const INTERVAL = 3400;
+            const TRANSITION_DURATION = 500;
+
+            const words = (span.getAttribute('data-words') ||
+                          'CrossFit,HYROX,Youth,Personal,Nutrition,OpenGym')
+                          .split(',')
+                          .map(w => w.trim())
+                          .filter(Boolean);
+
+            let i = 0;
+            let timer = null;
+            let paused = false;
+            let isAnimating = false;
+
+            function modernSwap(){
+                if(paused || isAnimating) return;
+
+                isAnimating = true;
+                rotator.classList.add('animating');
+
+                // Animate out
+                span.classList.add('animate-out');
+
+                setTimeout(() => {
+                    i = (i + 1) % words.length;
+                    span.textContent = words[i];
+
+                    // Reset classes
+                    span.classList.remove('animate-out');
+                    span.classList.add('animate-in');
+
+                    // Animate in
+                    requestAnimationFrame(() => {
+                        span.classList.remove('animate-in');
+                        span.style.opacity = '1';
+                        span.style.transform = 'translateY(0) rotateX(0deg) scale(1)';
+                    });
+
+                    setTimeout(() => {
+                        rotator.classList.remove('animating');
+                        isAnimating = false;
+                    }, 300);
+
+                }, TRANSITION_DURATION);
+            }
+
+            function play(){
+                stop();
+                timer = setInterval(modernSwap, INTERVAL);
+            }
+
+            function stop(){
+                if(timer) clearInterval(timer);
+                timer = null;
+            }
+
+            // Enhanced interaction handlers
+            ['mouseenter', 'focusin'].forEach(evt =>
+                rotator.addEventListener(evt, () => {
+                    paused = true;
+                    rotator.style.transform = 'translateY(-2px) scale(1.02)';
+                })
+            );
+
+            ['mouseleave', 'focusout'].forEach(evt =>
+                rotator.addEventListener(evt, () => {
+                    paused = false;
+                    rotator.style.transform = '';
+                })
+            );
+
+            // Pause when tab not visible
+            document.addEventListener('visibilitychange', () => {
+                document.hidden ? stop() : play();
+            });
+
+            // Enhanced mobile touch support
+            rotator.addEventListener('touchstart', () => {
+                rotator.style.transform = 'translateY(-1px) scale(1.01)';
+            });
+
+            rotator.addEventListener('touchend', () => {
+                rotator.style.transform = '';
+            });
+
+            // Initialize
+            play();
+        })();
+    </script>
