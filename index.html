@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossFit 103 | Possibly Best Workout in Staten Island</title>
+    <meta name="description" content="Get in the best shape of your life at CrossFit 103. Expert coaching, proven training, and a community that pushes you to keep going.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Poppins', 'Segoe UI', sans-serif;
+            background: #041020;
+            color: #e9ecee;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .header {
+            background: rgba(4, 16, 32, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(233, 236, 238, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #e9ecee;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #e9ecee;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-menu a:hover {
+            color: #218bf6;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .icon-container {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            margin: 0;
+            vertical-align: top;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .icon svg {
+            width: 22px;
+            height: 22px;
+            fill: #ffffff;
+        }
+
+        .hover-text {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .hover-text::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid #333;
+        }
+
+        .icon-container:hover .hover-text {
+            opacity: 1;
+            visibility: visible;
+            bottom: -40px;
+        }
+
+        .btn-primary {
+            background: #218bf6;
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(33, 139, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #176bc4;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(33, 139, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #e9ecee !important;
+            border: 2px solid rgba(233, 236, 238, 0.3);
+            padding: 12px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            border-color: #218bf6;
+            color: #218bf6 !important;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 120px 24px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(4, 16, 32, 0.85), rgba(0, 0, 0, 0.7));
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(33, 139, 246, 0.15), transparent 70%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: rgba(233, 236, 238, 0.8);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            background: #071424;
+            padding: 100px 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            letter-spacing: -0.01em;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .pain-card {
+            background: rgba(4, 16, 32, 0.6);
+            border: 1px solid rgba(233, 236, 238, 0.1);
+            border-radius: 20px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(33, 139, 246, 0.5);
+        }
+
+        .pain-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: #218bf6;
+        }
+
+        .pain-card p {
+            color: rgba(233, 236, 238, 0.7);
+            line-height: 1.7;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* Trust Signals */
+        .trust-signals-section {
+            width: 100%;
+            padding: 30px 0;
+            background: #071326;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+        }
+
+        .trust-signals-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(235, 238, 242, 0.1) 50%, transparent 70%);
+            animation: shimmer 25s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .scrolling-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scrolling-content {
+            display: flex;
+            animation: scroll-horizontal 40s linear infinite;
+            width: max-content;
+            gap: 40px;
+            will-change: transform;
+        }
+
+        @keyframes scroll-horizontal {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.25) 0%,
+                rgba(255, 255, 255, 0.1) 100%);
+            backdrop-filter: blur(20px) saturate(1.8);
+            -webkit-backdrop-filter: blur(20px) saturate(1.8);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 20px 40px;
+            min-width: 320px;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6),
+                inset 0 0 20px rgba(255, 255, 255, 0.05),
+                0 0 0 1px rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .trust-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transition: left 0.5s ease;
+        }
+
+        .trust-item:hover::before {
+            left: 100%;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-8px) scale(1.03);
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.4) 0%,
+                rgba(255, 255, 255, 0.2) 100%);
+            box-shadow:
+                0 16px 40px rgba(0, 0, 0, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.8),
+                inset 0 0 30px rgba(255, 255, 255, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            border-top-color: rgba(255, 255, 255, 0.7);
+            border-left-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .trust-icon {
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c76771;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .trust-icon svg {
+            width: 32px;
+            height: 32px;
+            color: inherit;
+        }
+
+        .trust-text {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trust-stat {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ebeef2;
+            font-family: 'Montserrat', system-ui, sans-serif;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .trust-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ebeef2;
+            opacity: 0.9;
+            font-family: system-ui, sans-serif;
+        }
+
+        .trust-signals-section:hover .scrolling-content {
+            animation-play-state: paused;
+        }
+
+        /* Programs */
+        .programs {
+            background: #071424;
+            padding: 100px 24px;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .program-card {
+            background: rgba(4, 16, 32, 0.8);
+            border: 1px solid rgba(233, 236, 238, 0.1);
+            border-radius: 24px;
+            padding: 48px 40px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(33, 139, 246, 0.6);
+        }
+
+        .program-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .program-card p {
+            color: rgba(233, 236, 238, 0.7);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        /* Coaches */
+        .coaches {
+            background: #041020;
+            padding: 100px 24px;
+        }
+
+        .coaches-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .coaches-intro p {
+            font-size: 1.2rem;
+            color: rgba(233, 236, 238, 0.8);
+            margin-top: 20px;
+        }
+
+        .coach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .coach-card {
+            background: rgba(7, 20, 36, 0.8);
+            border: 1px solid rgba(233, 236, 238, 0.1);
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .coach-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .coach-image {
+            width: 100%;
+            height: 320px;
+            background: rgba(33, 139, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(233, 236, 238, 0.3);
+        }
+
+        .coach-info {
+            padding: 32px;
+        }
+
+        .coach-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .coach-cert {
+            color: #218bf6;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .coach-info p {
+            color: rgba(233, 236, 238, 0.7);
+            line-height: 1.7;
+        }
+
+        /* Reviews */
+        .reviews {
+            background: #071424;
+            padding: 100px 24px;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #218bf6;
+            margin-bottom: 16px;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .review-card {
+            background: rgba(4, 16, 32, 0.6);
+            border: 1px solid rgba(233, 236, 238, 0.1);
+            border-radius: 20px;
+            padding: 32px;
+        }
+
+        .review-card p {
+            color: rgba(233, 236, 238, 0.85);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #218bf6;
+        }
+
+        /* Memberships */
+        .memberships {
+            background: #041020;
+            padding: 100px 24px;
+        }
+
+        .membership-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .membership-content p {
+            font-size: 1.1rem;
+            color: rgba(233, 236, 238, 0.8);
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #071424;
+            padding: 100px 24px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 60px auto 0;
+            background: rgba(4, 16, 32, 0.8);
+            border: 1px solid rgba(233, 236, 238, 0.1);
+            border-radius: 24px;
+            padding: 48px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #041020;
+            padding: 60px 24px 30px;
+            border-top: 1px solid rgba(233, 236, 238, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .footer-address {
+            color: rgba(233, 236, 238, 0.6);
+            margin-bottom: 30px;
+        }
+
+        .footer-copyright {
+            color: rgba(233, 236, 238, 0.5);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(233, 236, 238, 0.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(4, 16, 32, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #111;
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #218bf6;
+            transform: rotate(90deg);
+        }
+
+        .modal-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: #e9ecee;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: rgba(4, 16, 32, 0.98);
+                backdrop-filter: blur(20px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                padding: 40px 0;
+                gap: 24px;
+                border-top: 1px solid rgba(233, 236, 238, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .social-icons {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .trust-signals-section {
+                padding: 20px 0;
+            }
+
+            .scrolling-content {
+                gap: 24px;
+                animation-duration: 15s;
+            }
+
+            .trust-item {
+                min-width: 280px;
+                padding: 16px 32px;
+                gap: 12px;
+            }
+
+            .trust-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .trust-stat {
+                font-size: 16px;
+            }
+
+            .trust-label {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .pain-points,
+            .programs,
+            .coaches,
+            .reviews,
+            .memberships,
+            .contact-form {
+                padding: 60px 20px;
+            }
+
+            .form-container {
+                padding: 32px 24px;
+            }
+
+            .modal-content {
+                width: 95%;
+                height: 85vh;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .scrolling-content {
+                animation-duration: 90s;
+            }
+
+            .trust-signals-section::before {
+                animation: none;
+            }
+
+            .trust-item:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">CrossFit 103</a>
+
+            <div class="nav-content">
+                <nav>
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">PROGRAMS</a></li>
+                        <li><a href="#coaches">COACHES</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a onclick="openDropInModal()" class="btn-secondary">Drop In</a></li>
+                        <li><a onclick="openGetStartedModal()" class="btn-primary">Get Started</a></li>
+                    </ul>
+                </nav>
+
+                <div class="social-icons">
+                    <div class="icon-container" onclick="openTextMessage()">
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 2H7c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v13H7V4zm0 15h10v1H7v-1z"/>
+                                <circle cx="12" cy="18.5" r=".8"/>
+                            </svg>
+                        </div>
+                        <div class="hover-text">text us</div>
+                    </div>
+
+                    <div class="icon-container" onclick="openInstagram()">
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                        <div class="hover-text">follow us</div>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-toggle" id="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <!-- Replace this video src with your actual video URL -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://storage.googleapis.com/msgsndr/QUo5YksQ3m4Cj0up4KFt/media/PLACEHOLDER_VIDEO.mp4" type="video/mp4">
+        </video>
+        <div class="hero-container">
+            <h1>Get in the Best Shape of Your Life</h1>
+            <p>Backed by expert coaching, proven training, and a community that pushes you to keep going.</p>
+            <a onclick="openGetStartedModal()" class="btn-primary" style="cursor: pointer;">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="pain-points">
+        <div class="container">
+            <h2 class="section-title">If You're Tired Of...</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>Doing boring workouts alone?</h3>
+                    <p>Imagine training in an environment where every workout is fresh, exciting, and you're never on your own.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>Feeling Lost in the gym?</h3>
+                    <p>What if you had expert coaches and a proven program guiding you step-by-step?</p>
+                </div>
+                <div class="pain-card">
+                    <h3>Feeling like you don't have time?</h3>
+                    <p>Picture workouts designed to fit your schedule—efficient, effective, and done in under an hour.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>Not having a solid game plan?</h3>
+                    <p>Think about following a roadmap that shows you exactly how to reach your goals, without the guesswork.</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a onclick="openGetStartedModal()" class="btn-primary" style="cursor: pointer;">We're Ready to Guide You On Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section class="trust-signals-section">
+        <div class="scrolling-container">
+            <div class="scrolling-content">
+                <!-- First set -->
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">4.9/5 Stars</span>
+                        <span class="trust-label">Google Reviews</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-2c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2h3v4H4zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM7.5 6C8.33 6 9 6.67 9 7.5S8.33 9 7.5 9 6 8.33 6 7.5 6.67 6 7.5 6z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">200+ Members</span>
+                        <span class="trust-label">Strong Community</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 3V1h10v2h5v6l-2 6H4L2 9V3h5zM6 5H4v3.5l1 3h1V5zm12 0v6.5h1l1-3V5h-2zM8 5v8h8V5H8z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">CrossFit Affiliate</span>
+                        <span class="trust-label">Since 2016</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 12c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3zm3 8c4.42 0 8-3.58 8-8 0-1.85-.63-3.55-1.69-4.9L16.9 8.5C17.6 9.5 18 10.7 18 12c0 3.31-2.69 6-6 6s-6-2.69-6-6c0-1.3.4-2.5 1.1-3.5L5.69 7.1C4.63 8.45 4 10.15 4 12c0 4.42 3.58 8 8 8z"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">12 Certified</span>
+                        <span class="trust-label">Expert Coaches</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-8c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">HYROX Official</span>
+                        <span class="trust-label">Affiliate Partner</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.28 2.65-.25 3.51-.22.35-.6.5-.88.8-.48.68-.21 1.94 1.14 2.01C16.17 16.65 14.18 19 11.71 19z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">1000+ Workouts</span>
+                        <span class="trust-label">Completed Weekly</span>
+                    </div>
+                </div>
+
+                <!-- Duplicate set for seamless loop -->
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">4.9/5 Stars</span>
+                        <span class="trust-label">Google Reviews</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v-2c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2h3v4H4zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM7.5 6C8.33 6 9 6.67 9 7.5S8.33 9 7.5 9 6 8.33 6 7.5 6.67 6 7.5 6z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">200+ Members</span>
+                        <span class="trust-label">Strong Community</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 3V1h10v2h5v6l-2 6H4L2 9V3h5zM6 5H4v3.5l1 3h1V5zm12 0v6.5h1l1-3V5h-2zM8 5v8h8V5H8z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">CrossFit Affiliate</span>
+                        <span class="trust-label">Since 2016</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 12c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3zm3 8c4.42 0 8-3.58 8-8 0-1.85-.63-3.55-1.69-4.9L16.9 8.5C17.6 9.5 18 10.7 18 12c0 3.31-2.69 6-6 6s-6-2.69-6-6c0-1.3.4-2.5 1.1-3.5L5.69 7.1C4.63 8.45 4 10.15 4 12c0 4.42 3.58 8 8 8z"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">12 Certified</span>
+                        <span class="trust-label">Expert Coaches</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-8c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">HYROX Official</span>
+                        <span class="trust-label">Affiliate Partner</span>
+                    </div>
+                </div>
+
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.28 2.65-.25 3.51-.22.35-.6.5-.88.8-.48.68-.21 1.94 1.14 2.01C16.17 16.65 14.18 19 11.71 19z"/>
+                        </svg>
+                    </div>
+                    <div class="trust-text">
+                        <span class="trust-stat">1000+ Workouts</span>
+                        <span class="trust-label">Completed Weekly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <div class="program-grid">
+                <div class="program-card">
+                    <h3>CrossFit</h3>
+                    <p>Become your best self in our fun core program with 60 minutes of community-based group classes where you are supported by an expert coach while surrounded by a community of like-minded Staten Island locals.</p>
+                </div>
+                <div class="program-card">
+                    <h3>HYROX Training</h3>
+                    <p>Race-ready conditioning built around HYROX movements—runs, sleds, carries, rows—coached with precision and paced for your level, alongside driven Staten Island athletes.</p>
+                </div>
+                <div class="program-card">
+                    <h3>Personal Coaching</h3>
+                    <p>One-to-one coaching that meets you where you are, builds a clear plan, and guides every rep—so you train with purpose and leave with total clarity.</p>
+                </div>
+                <div class="program-card">
+                    <h3>Real Results</h3>
+                    <p>Clear benchmarks, consistent wins, and visible progress—tracked in the gym and felt in daily life—supported by coaches and a Staten Island community that shows up.</p>
+                </div>
+            </div>
+            <div class="cta-center" style="margin-top: 60px;">
+                <a href="#contact" class="btn-primary">Learn more about our programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches -->
+    <section class="coaches" id="coaches">
+        <div class="container">
+            <div class="coaches-intro">
+                <h2 class="section-title">Coaches</h2>
+                <p>The difference isn't the workouts—it's the coaches who keep you accountable and progressing.</p>
+            </div>
+            <div class="coach-grid">
+                <div class="coach-card">
+                    <div class="coach-image">👤</div>
+                    <div class="coach-info">
+                        <h3>Michael Morgante</h3>
+                        <div class="coach-cert">CrossFit L2</div>
+                        <p>Owner and head coach of CrossFit 103, Mike combines a decade of experience, Level 2 certification, and a DJ's energy to create a community-driven training atmosphere.</p>
+                    </div>
+                </div>
+                <div class="coach-card">
+                    <div class="coach-image">👤</div>
+                    <div class="coach-info">
+                        <h3>Thomas Malagreca</h3>
+                        <div class="coach-cert">CrossFit L2</div>
+                        <p>Co-owner and head coach, Thomas combines years of experience with a focus on fundamentals, creating a supportive space where members push past limits and grow.</p>
+                    </div>
+                </div>
+                <div class="coach-card">
+                    <div class="coach-image">👤</div>
+                    <div class="coach-info">
+                        <h3>Nicolette Esposito</h3>
+                        <div class="coach-cert">CrossFit L1</div>
+                        <p>Competitive dancer turned CrossFit coach, Nicolette brings discipline, encouragement, and community focus—making every class the best hour of her athletes' day.</p>
+                    </div>
+                </div>
+                <div class="coach-card">
+                    <div class="coach-image">👤</div>
+                    <div class="coach-info">
+                        <h3>Maria Boschnack</h3>
+                        <div class="coach-cert">CrossFit L1</div>
+                        <p>A former pro dancer and bodybuilding champion, Maria brings 20+ years of teaching and boundless energy to help athletes move with precision, confidence, and joy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cta-center" style="margin-top: 60px;">
+                <a href="#contact" class="btn-primary">View all coaches</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <div class="reviews-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <div class="rating">
+                    <span>4.9</span>
+                    <span style="font-size: 1.5rem; color: rgba(233, 236, 238, 0.6);">Google Reviews (176)</span>
+                </div>
+            </div>
+            <div class="review-grid">
+                <div class="review-card">
+                    <p>"Seriously the best place you could possibly train on Staten Island... if you're the type of person who wants to work hard, sweat, smile, high five, and repeat day after day. Then one day you look in the mirror and say 'damn... I did that.' That happens here."</p>
+                    <div class="review-author">Matt Gallo</div>
+                </div>
+                <div class="review-card">
+                    <p>"CrossFit 103 is truly an amazing place! The coaches are not only highly knowledgeable but also incredibly supportive — they push you to be your best while always making sure you move safely and correctly."</p>
+                    <div class="review-author">Pavel Kurouski</div>
+                </div>
+                <div class="review-card">
+                    <p>"It's amazing, the staff & members welcome you from day 1, make you feel like you belong. The coaches are extremely helpful, and guide you every step of the way. It's like working out with family!!!"</p>
+                    <div class="review-author">Z N</div>
+                </div>
+                <div class="review-card">
+                    <p>"I've been a member at CrossFit 103 for about 6 months and absolutely love it! The coaches are motivating, knowledgeable, and always make sure you feel comfortable with the workouts."</p>
+                    <div class="review-author">Danielle H</div>
+                </div>
+                <div class="review-card">
+                    <p>"Crossfit 103 is the best!! I started coming here in November of last year when I moved to Staten Island. This gym is filled with encouraging coaches and members that make you want to get stronger each and every day."</p>
+                    <div class="review-author">Christina Dahl</div>
+                </div>
+                <div class="review-card">
+                    <p>"My experience has been nothing but 100% positive from the start, and I was apprehensive before I joined. Crossfit 103 is extremely welcoming to all levels of fitness, the owners and coaches are very knowledgeable."</p>
+                    <div class="review-author">Chris Porto</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memberships -->
+    <section class="memberships" id="memberships">
+        <div class="container">
+            <div class="membership-content">
+                <h2 class="section-title">Memberships</h2>
+                <p>At CrossFit 103, we believe fitness should be accessible for everyone.</p>
+                <p>That's why we offer full-access memberships that give you unlimited training and support inside our community.</p>
+                <p>Thanks to our partnership with Active & Fit, Staten Island residents can take advantage of flexible, accessible membership options that remove barriers and make getting started simple.</p>
+                <p>Want to learn more? Fill out our quick contact form below and schedule a time to chat with one of our coaches—we'll help you find the membership that works best for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-form" id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to See Real Progress?</h2>
+            <div class="form-container">
+                <!-- PLACEHOLDER: Replace this div with your contact form embed code -->
+                <div style="padding: 40px; text-align: center; color: rgba(233, 236, 238, 0.7);">
+                    <p style="margin-bottom: 20px;">Contact form embed code goes here</p>
+                    <a onclick="openGetStartedModal()" class="btn-primary" style="cursor: pointer;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">CrossFit 103</div>
+            <div class="footer-address">
+                47 Trioka Wy, Staten Island, NY 10309, USA
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 CrossFit 103. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Drop In Modal (Wodify) -->
+    <div id="dropInModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDropInModal()">&times;</button>
+            <iframe src="https://thrive.wodify.com/OnlineSalesPortal/ViewSchedule.aspx?LocationId=5260&OnlineMembershipId=68608"></iframe>
+        </div>
+    </div>
+
+    <!-- Get Started Modal (Contact Form) -->
+    <div id="getStartedModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeGetStartedModal()">&times;</button>
+            <!-- PLACEHOLDER: Replace this iframe with your contact form embed code -->
+            <iframe src="https://api.leadconnectorhq.com/widget/form/PLACEHOLDER_FORM_ID" style="width:100%; height:100%; border:none;"></iframe>
+        </div>
+    </div>
+
+    <!-- Chat Widget Script -->
+    <script
+      src="https://beta.leadconnectorhq.com/loader.js"
+      data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
+      data-widget-id="692481a580f3ee13f93918ce">
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Text message function
+        function openTextMessage() {
+            const businessPhoneNumber = '1234567890'; // Replace with actual number
+            const defaultMessage = 'Hi! I\'d like to get in touch.';
+            const smsUrl = `sms:${businessPhoneNumber}?body=${encodeURIComponent(defaultMessage)}`;
+            window.location.href = smsUrl;
+        }
+
+        // Instagram function
+        function openInstagram() {
+            const instagramUrl = 'https://www.instagram.com/crossfit_103?utm_source=ig_web_button_share_sheet&igsh=MWI5ZmphdjljaXpwYQ==';
+            window.open(instagramUrl, '_blank');
+        }
+
+        // Drop In Modal
+        function openDropInModal() {
+            document.getElementById('dropInModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDropInModal() {
+            document.getElementById('dropInModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Get Started Modal
+        function openGetStartedModal() {
+            document.getElementById('getStartedModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGetStartedModal() {
+            document.getElementById('getStartedModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const dropInModal = document.getElementById('dropInModal');
+            const getStartedModal = document.getElementById('getStartedModal');
+
+            if (event.target == dropInModal) {
+                closeDropInModal();
+            }
+            if (event.target == getStartedModal) {
+                closeGetStartedModal();
+            }
+        }
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeDropInModal();
+                closeGetStartedModal();
+            }
+        });
+    </script>
+</body>
+</html>
