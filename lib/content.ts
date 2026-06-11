@@ -5,18 +5,24 @@ export const SITE = {
   name: "CrossFit 103",
   phone: "(718) 555-0103",
   phoneHref: "tel:+17185550103",
-  email: "contact@crossfit103.com",
+  email: "info@crossfit103.com",
   address: "47 Trioka Wy, Staten Island, NY 10309",
   mapUrl:
     "https://www.google.com/maps/search/?api=1&query=47+Trioka+Wy+Staten+Island+NY+10309",
   mapEmbed:
     "https://www.google.com/maps?q=47+Trioka+Wy,+Staten+Island,+NY+10309&output=embed",
-  instagram: "https://www.instagram.com/crossfit103/",
-  getStartedUrl: "https://xgym.msgsndr.com/home",
-  dropInUrl: "https://xgym.msgsndr.com/home",
-  // Hero background video — host the ~190MB file on a CDN/bucket and paste the
-  // public URL here. While empty, the hero falls back to the still image.
-  heroVideoUrl: "",
+  instagram: "https://www.instagram.com/crossfit_103/",
+  // "Get Started" opens the real GoHighLevel "General Interest Form" in a modal,
+  // so submissions flow straight into the GHL pipeline.
+  ghlFormId: "hErjkS6v47Q0IA55lB3p",
+  ghlFormName: "General Interest Form",
+  // "Drop In" opens this Wodify Online Sales Page embedded in a modal.
+  wodifyDropInUrl:
+    "https://thrive.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D68608%26LocationId%3D5260",
+  // Hero background video — hosted on the filesafe CDN. While empty, the hero
+  // falls back to the still image.
+  heroVideoUrl:
+    "https://assets.cdn.filesafe.space/QUo5YksQ3m4Cj0up4KFt/media/68e0452034c87c41bd37be2a.mp4",
 };
 
 export const NAV = [

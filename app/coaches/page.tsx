@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
-import { SITE, COACHES } from "@/lib/content";
+import { GetStartedButton } from "@/components/Modals";
+import { COACHES } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Coaches | CrossFit 103 — Staten Island",
@@ -70,12 +71,7 @@ export default function CoachesPage() {
               Book a free No-Sweat Intro and meet the team that will guide your
               journey.
             </p>
-            <a
-              href={SITE.getStartedUrl}
-              className="btn-primary mt-8 inline-block rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide"
-            >
-              Get Started
-            </a>
+            <GetStartedButton className="btn-primary mt-8 inline-block rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide" />
           </Reveal>
         </div>
       </section>

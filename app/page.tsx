@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
-import { LeadForm } from "@/components/LeadForm";
+import { GhlForm } from "@/components/GhlForm";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { DropInButton, GetStartedButton } from "@/components/Modals";
 import {
   SITE,
   PROBLEMS,
@@ -54,35 +55,26 @@ function Hero() {
           className="object-cover opacity-30"
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy" />
-      <div className="relative mx-auto max-w-6xl px-6 py-28 text-center sm:py-36">
+      {/* Light, low-opacity wash so the footage stays bright (matches live site) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-black/25 to-navy/95" />
+      <div className="relative mx-auto flex min-h-[78vh] max-w-6xl flex-col justify-center px-6 py-28">
         <Reveal>
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.24em] text-blue">
-            Strength • Community • Grit
-          </p>
-        </Reveal>
-        <Reveal delay={80}>
-          <h1 className="mx-auto max-w-3xl text-4xl font-black leading-[1.05] sm:text-6xl">
+          <h1 className="max-w-4xl font-display text-5xl font-extrabold italic uppercase leading-[0.98] tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-7xl">
             Get in the Best Shape of Your Life
           </h1>
         </Reveal>
-        <Reveal delay={160}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted">
+        <Reveal delay={120}>
+          <p className="mt-6 max-w-2xl text-lg italic text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)] sm:text-xl">
             Backed by expert coaching, proven training, and a community that
             pushes you to keep going.
           </p>
         </Reveal>
-        <Reveal delay={240}>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href={SITE.getStartedUrl}
-              className="btn-primary w-full rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide sm:w-auto"
-            >
-              Get Started
-            </a>
+        <Reveal delay={220}>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <GetStartedButton className="btn-primary w-full rounded-md px-9 py-4 text-center text-sm font-semibold uppercase tracking-wide sm:w-auto" />
             <Link
               href="/programs"
-              className="btn-ghost w-full rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide sm:w-auto"
+              className="btn-ghost w-full rounded-md px-9 py-4 text-center text-sm font-semibold uppercase tracking-wide sm:w-auto"
             >
               View Programs
             </Link>
@@ -320,18 +312,8 @@ function Memberships() {
                 barriers and make getting started simple.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={SITE.getStartedUrl}
-                  className="btn-primary rounded-full px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wide"
-                >
-                  Get Started
-                </a>
-                <a
-                  href={SITE.dropInUrl}
-                  className="btn-ghost rounded-full px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wide"
-                >
-                  Drop In
-                </a>
+                <GetStartedButton className="btn-primary rounded-full px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wide" />
+                <DropInButton className="btn-ghost rounded-full px-7 py-3.5 text-center text-sm font-semibold uppercase tracking-wide" />
               </div>
             </Reveal>
           </div>
@@ -437,7 +419,9 @@ function ContactCta() {
           </p>
         </Reveal>
         <Reveal delay={120}>
-          <LeadForm />
+          <div className="card overflow-hidden rounded-3xl">
+            <GhlForm className="h-[560px] bg-white" />
+          </div>
         </Reveal>
       </div>
     </section>

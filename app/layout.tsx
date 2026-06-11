@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Inter, Roboto, Montserrat } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ModalProvider } from "@/components/Modals";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,6 +15,14 @@ const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
+});
+
+// Hero / display headline font — matches the live site's --headlinefont.
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -37,12 +46,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${roboto.variable} h-full antialiased`}
+      className={`${inter.variable} ${roboto.variable} ${montserrat.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-navy text-ink">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ModalProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ModalProvider>
       </body>
     </html>
   );

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
-import { SITE, PROGRAMS } from "@/lib/content";
+import { GetStartedButton } from "@/components/Modals";
+import { PROGRAMS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Programs | CrossFit 103 — Staten Island's Best Workout Programs",
@@ -63,12 +64,7 @@ export default function ProgramsPage() {
                     </div>
                   ))}
                 </div>
-                <a
-                  href={SITE.getStartedUrl}
-                  className="btn-primary mt-7 inline-block rounded-full px-7 py-3.5 text-sm font-semibold uppercase tracking-wide"
-                >
-                  Get Started
-                </a>
+                <GetStartedButton className="btn-primary mt-7 inline-block rounded-full px-7 py-3.5 text-sm font-semibold uppercase tracking-wide" />
               </div>
             </div>
           </Reveal>
@@ -85,12 +81,10 @@ export default function ProgramsPage() {
               Book a free No-Sweat Intro and we&apos;ll match you to the right
               program in 20 minutes.
             </p>
-            <a
-              href={SITE.getStartedUrl}
+            <GetStartedButton
+              label="Book Your Free Intro"
               className="btn-primary mt-8 inline-block rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide"
-            >
-              Book Your Free Intro
-            </a>
+            />
           </Reveal>
         </div>
       </section>

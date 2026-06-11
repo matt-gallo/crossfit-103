@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { GetStartedButton } from "@/components/Modals";
 import { SITE, FAQS } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -48,12 +49,7 @@ export default function FaqPage() {
               90 days.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a
-                href={SITE.getStartedUrl}
-                className="btn-primary rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide"
-              >
-                Get Started
-              </a>
+              <GetStartedButton className="btn-primary rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide" />
               <a
                 href={SITE.phoneHref}
                 className="btn-ghost rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-wide"

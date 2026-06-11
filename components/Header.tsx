@@ -4,9 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { NAV, SITE } from "@/lib/content";
+import { useModals } from "@/components/Modals";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const { openDropIn, openGetStarted } = useModals();
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-[rgba(4,16,32,0.92)] backdrop-blur-md">
@@ -35,17 +37,41 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={SITE.dropInUrl}
+          <button
+            type="button"
+            onClick={openDropIn}
             className="btn-ghost rounded-full px-5 py-2.5 text-sm font-semibold uppercase tracking-wide"
           >
             Drop In
-          </a>
-          <a
-            href={SITE.getStartedUrl}
+          </button>
+          <button
+            type="button"
+            onClick={openGetStarted}
             className="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold uppercase tracking-wide"
           >
             Get Started
+          </button>
+          <a
+            href={SITE.phoneHref}
+            aria-label="Call us"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-ink/80 transition-colors hover:text-blue"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2Z" />
+            </svg>
+          </a>
+          <a
+            href={SITE.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-ink/80 transition-colors hover:text-blue"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
           </a>
         </div>
 
@@ -83,18 +109,26 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-3 flex gap-3">
-              <a
-                href={SITE.dropInUrl}
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openDropIn();
+                }}
                 className="btn-ghost flex-1 rounded-full px-5 py-2.5 text-center text-sm font-semibold uppercase"
               >
                 Drop In
-              </a>
-              <a
-                href={SITE.getStartedUrl}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(false);
+                  openGetStarted();
+                }}
                 className="btn-primary flex-1 rounded-full px-5 py-2.5 text-center text-sm font-semibold uppercase"
               >
                 Get Started
-              </a>
+              </button>
             </div>
           </nav>
         </div>
