@@ -3,8 +3,8 @@
 
 export const SITE = {
   name: "CrossFit 103",
-  phone: "(718) 555-0103",
-  phoneHref: "tel:+17185550103",
+  phone: "(315) 968-5136",
+  phoneHref: "tel:+13159685136",
   email: "info@crossfit103.com",
   address: "47 Trioka Wy, Staten Island, NY 10309",
   mapUrl:

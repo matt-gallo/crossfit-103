@@ -7,17 +7,14 @@ export function Footer() {
     <footer className="border-t border-line bg-navy-soft">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="inline-flex items-center" aria-label="CrossFit 103 home">
             <Image
               src="/images/logo.svg"
               alt="CrossFit 103"
-              width={44}
-              height={44}
+              width={160}
+              height={48}
               className="h-10 w-auto"
             />
-            <span className="text-lg font-black uppercase tracking-wide">
-              CrossFit&nbsp;103
-            </span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-muted">
             Get in the best shape of your life with expert coaching, proven
