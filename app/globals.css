@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette pulled from the live crossfit103.com */
+  --navy: #041020;
+  --navy-soft: #0a1a30;
+  --navy-card: #0d2138;
+  --blue: #188bf6;
+  --blue-bright: #2f9bff;
+  --ink: #ffffff;
+  --muted: #aebccb;
+  --line: rgba(255, 255, 255, 0.1);
+
+  --background: var(--navy);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-soft: var(--navy-soft);
+  --color-navy-card: var(--navy-card);
+  --color-blue: var(--blue);
+  --color-blue-bright: var(--blue-bright);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--ink);
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* Section reveal on scroll */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.in-view {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle gradient text for accents */
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff 0%, #aecbff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(24, 139, 246, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-primary:hover {
+  background: var(--blue-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(24, 139, 246, 0.45);
+}
+
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--blue);
+  background: rgba(24, 139, 246, 0.08);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(24, 139, 246, 0.5);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+}
