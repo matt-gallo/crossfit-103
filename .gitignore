@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# large hero video — hosted externally on a CDN, not committed (see SITE.heroVideoUrl)
+/public/video/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

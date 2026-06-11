@@ -14,6 +14,9 @@ export const SITE = {
   instagram: "https://www.instagram.com/crossfit103/",
   getStartedUrl: "https://xgym.msgsndr.com/home",
   dropInUrl: "https://xgym.msgsndr.com/home",
+  // Hero background video — host the ~190MB file on a CDN/bucket and paste the
+  // public URL here. While empty, the hero falls back to the still image.
+  heroVideoUrl: "",
 };
 
 export const NAV = [
@@ -71,7 +74,7 @@ export const PROGRAMS = [
   {
     slug: "hyrox",
     name: "Hyrox Training",
-    image: "/images/gym-2.jpeg",
+    image: "/images/gym-9.jpeg",
     short:
       "Race-ready conditioning built around HYROX movements—runs, sleds, carries, rows—coached with precision and paced for your level, alongside driven Staten Island athletes.",
     pricing: [{ label: "Included for members", value: "Free" }],

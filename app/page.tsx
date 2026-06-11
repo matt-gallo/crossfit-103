@@ -33,14 +33,27 @@ export default function Home() {
 function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <Image
-        src="/images/hero-bg.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover opacity-30"
-      />
+      {SITE.heroVideoUrl ? (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/hero-bg.png"
+          className="absolute inset-0 h-full w-full object-cover opacity-40"
+        >
+          <source src={SITE.heroVideoUrl} type="video/mp4" />
+        </video>
+      ) : (
+        <Image
+          src="/images/hero-bg.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-30"
+        />
+      )}
       <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy" />
       <div className="relative mx-auto max-w-6xl px-6 py-28 text-center sm:py-36">
         <Reveal>
@@ -324,7 +337,7 @@ function Memberships() {
           </div>
           <div className="relative min-h-[320px] lg:min-h-[440px]">
             <Image
-              src="/images/gym-2.jpeg"
+              src="/images/gym-8.jpeg"
               alt="Training at CrossFit 103"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
