@@ -16,7 +16,7 @@ export const SITE = {
   // so submissions flow straight into the GHL pipeline.
   ghlFormId: "hErjkS6v47Q0IA55lB3p",
   ghlFormName: "General Interest Form",
-  // "Drop In" opens this Wodify Online Sales Page embedded in a modal.
+  // "Drop In" opens this Wodify Online Sales Page in a new tab.
   wodifyDropInUrl:
     "https://thrive.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D68608%26LocationId%3D5260",
   // Hero background video — hosted on the filesafe CDN. While empty, the hero

@@ -8,7 +8,7 @@ import { useModals } from "@/components/Modals";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const { openDropIn, openGetStarted } = useModals();
+  const { openGetStarted } = useModals();
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-[rgba(4,16,32,0.92)] backdrop-blur-md">
@@ -37,13 +37,14 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <button
-            type="button"
-            onClick={openDropIn}
+          <a
+            href={SITE.wodifyDropInUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-ghost rounded-full px-5 py-2.5 text-sm font-semibold uppercase tracking-wide"
           >
             Drop In
-          </button>
+          </a>
           <button
             type="button"
             onClick={openGetStarted}
@@ -109,16 +110,15 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-3 flex gap-3">
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  openDropIn();
-                }}
+              <a
+                href={SITE.wodifyDropInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
                 className="btn-ghost flex-1 rounded-full px-5 py-2.5 text-center text-sm font-semibold uppercase"
               >
                 Drop In
-              </button>
+              </a>
               <button
                 type="button"
                 onClick={() => {
