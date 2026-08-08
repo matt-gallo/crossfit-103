@@ -24,7 +24,15 @@ export function useModals() {
 export function ModalProvider({ children }: { children: React.ReactNode }) {
   const [active, setActive] = useState<ModalKind>(null);
 
-  const openDropIn = useCallback(() => setActive("dropIn"), []);
+  const openDropIn = useCallback(() => {
+    // Phones: the Wodify page misrenders inside an iframe at narrow widths
+    // (iOS Safari), so send small screens straight to the sales page.
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      window.open(SITE.wodifyDropInUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
+    setActive("dropIn");
+  }, []);
   const openGetStarted = useCallback(() => setActive("getStarted"), []);
   const close = useCallback(() => setActive(null), []);
 
